@@ -29,6 +29,6 @@ These are configuration files to get webpack and lite-server to run the way we w
 To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. And that's it, your environment is ready for development.
 ## Step 1 - Bootstrapping the app
 #### Summary
-In this section will be Bootstrapping, in other words, initially setting up our React app. We will build our first component and connect it to our index.html to see it on the page.
+In this section we will be bootstrapping, or in other words, initially setting up our React app. We will build our first component and connect it to our index.html to see it on the page.
 #### Detail
 To get started, we are going to need two terminal windows/tabs open, three if you want to commit code along the way. In the first one we are going to tell webpack to compile/bundle and watch for future changes. 
