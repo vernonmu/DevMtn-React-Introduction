@@ -1,0 +1,22 @@
+{
+  "name": "react-intro",
+  "version": "1.0.0",
+  "description": "## Setup Some modules provided in this setup for React may or may not be unfamiliar to you. I just wanted to take a quick second to explain some of the key features of this environment we will be using. #### File Structure Having a clean and maintainable work environment is key for development. Our current file structure is: ```` - public   - dist   - src \t- app \t  - app.js \t- index.html - .babelrc - .gitignore - .bs-config.json - .package.json - .README.md - .webpack.config.js ```` Why the public folder? Usually when creating a website you'll have a front-end and a back-end. It's a good idea to get into the habit of seperating the code for them. So even though there won't be a backend for this tutorial it doesn't hurt to use the same file structure. Also there are many different ways to structure your files to make them maintainable, this is just my way of doing so.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devlemire/DevMtn-React-Introduction.git"
+  },
+  "author": "James Lemire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devlemire/DevMtn-React-Introduction/issues"
+  },
+  "homepage": "https://github.com/devlemire/DevMtn-React-Introduction#readme",
+  "devDependencies": {
+    "create-react-app": "^1.0.3"
+  }
+}
