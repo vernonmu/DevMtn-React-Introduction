@@ -26,7 +26,7 @@ You may not know exactly how webpack and lite-server work, however I just wanted
 #### .babelrc and bs-config.json
 These are configuration files to get webpack and lite-server to run the way we want them to. .babelrc tells our babel loader which presets to use and bs-config.json tells our lite-server the directory of our index.html file to host.
 #### Starting up your Mercedes
-To get this project going we need to install all the node modules. `npm install` or `yarn install` ( highly recommend using yarn ). After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. 
+To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. And that's it, your environment is ready for development.
 ## Step 1 - Bootstrapping the app
 #### Summary
 In this section will be Bootstrapping, in other words, initially setting up our React app. We will build our first component and connect it to our index.html to see it on the page.
