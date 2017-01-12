@@ -26,13 +26,18 @@ You may not know exactly how webpack and lite-server work, however I just wanted
 #### .babelrc and bs-config.json
 These are configuration files to get webpack and lite-server to run the way we want them to. .babelrc tells our babel loader which presets to use and bs-config.json tells our lite-server the directory of our index.html file to host.
 #### Starting up your Mercedes
-To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. And that's it, your environment is ready for development.
+To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. Now for the fun part, putting the key in the ignition! Open up two terminals/tabs and run one command in each. 
+
+`webpack -w`, this tells webpack to compile/bundle our files and also watch for changes to re-compile/bundle.
+
+`npm run dev`, this starts up our lite-server in your default browser and will monitor for file-changes to refresh the browser for us.
+
+If everything ran successfully your `terminal(s)` output should look similiar:
+
+![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
+
+Having trouble? If you are having a premissions error with the global install try `sudo npm install -g webpack
 ## Step 1 - Bootstrapping the app
 #### Summary
 In this section we will be `bootstrapping`, or in other words, initially setting up our React app. We will build our first `component` and connect it to our `index.html` to see it on the page.
 #### Detail
-To get started, we are going to need two `terminal` windows/tabs open, three if you want to commit code along the way. In the first one we are going to tell webpack to compile/bundle and watch for future changes ( `webpack -w` ). In the second one we are going to tell `lite-server` to host our `index.html` locally and watch for changes ( `npm run dev` ). If everything ran successfully your `terminal(s)` output should look similiar:
-
-![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
-
-Having trouble? Make sure you `npm install` and also globally install webpack `npm install -g webpack`. If you are having a premissions error with the global install try `sudo npm install -g webpack`.
