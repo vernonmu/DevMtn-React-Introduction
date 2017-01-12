@@ -22,6 +22,6 @@ Why the public folder? Usually when creating a website you'll have a front-end a
 
 With this current file structure we can quickly determine where all our configuration files are ( the root of the directory ), where all our front-end files are ( public folder ), where all our source files are for editing the front-end ( public -> src folder ), and where our production (finished) files are ( public -> dist folder ). 
 #### Webpack with Lite-Server
-You may not know exactly how webpack and lite-server work, however I just wanted to briefly explain just how awesome they are. With them we can run two commands in the terminal that will open the default browser with our index.html for us, monitor any file changes, compile them, bundle them, and then reload our browser for us. It's the luxurious Mercedes of web development, you'll never want to go back to your 1999 honda. 
+You may not know exactly how webpack and lite-server work, however I just wanted to briefly explain just how awesome they are. With them we can run two commands in the terminal that will open the default browser with our index.html for us, monitor any file changes, compile them, bundle them, and then reload our browser for us. It's the luxurious Mercedes of web development, you'll never want to go back to your 1999 Honda. 
 #### .babelrc and bs-config.json
 These are configuration files to get webpack and lite-server to run the way we want them to. .babelrc tells our babel loader which presets to use and bs-config.json tells our lite-server the directory of our index.html file to host.
