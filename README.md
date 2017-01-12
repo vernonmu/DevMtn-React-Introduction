@@ -39,3 +39,4 @@ If everything ran successfully a tab in your default browser should of opened an
 #### Summary
 In this section we will be `bootstrapping`, or in other words, initially setting up our `react` app. We will build our first `component` and connect it to our `index.html` to see it on the page.
 #### Detail
+To get started we are going to go into our `app.js` file ( public -)
