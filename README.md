@@ -37,5 +37,5 @@ If everything ran successfully a tab in your default browser should of opened an
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
 ## Step 1 - Bootstrapping the app
 #### Summary
-In this section we will be `bootstrapping`, or in other words, initially setting up our React app. We will build our first `component` and connect it to our `index.html` to see it on the page.
+In this section we will be `bootstrapping`, or in other words, initially setting up our `react` app. We will build our first `component` and connect it to our `index.html` to see it on the page.
 #### Detail
