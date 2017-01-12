@@ -26,7 +26,7 @@ You may not know exactly how webpack and lite-server work, however I just wanted
 #### .babelrc and bs-config.json
 These are configuration files to get webpack and lite-server to run the way we want them to. .babelrc tells our babel loader which presets to use and bs-config.json tells our lite-server the directory of our index.html file to host.
 #### Starting up your Mercedes
-To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. Now for the fun part, putting the key in the ignition! Open up two terminals/tabs and run one command in each. 
+To get this project going we need to install all the node modules. `npm install` or `yarn install`. After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. Having trouble? If you are having a premissions error with the global install try `sudo npm install -g webpack`. Now for the fun part, putting the key in the ignition! Open up two terminals/tabs and run one command in each. 
 
 `webpack -w`, this tells webpack to compile/bundle our files and also watch for changes to re-compile/bundle.
 
@@ -35,8 +35,6 @@ To get this project going we need to install all the node modules. `npm install`
 If everything ran successfully a tab in your default browser should of opened and your `terminal(s)` output should look similiar:
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
-
-Having trouble? If you are having a premissions error with the global install try `sudo npm install -g webpack`.
 ## Step 1 - Bootstrapping the app
 #### Summary
 In this section we will be `bootstrapping`, or in other words, initially setting up our React app. We will build our first `component` and connect it to our `index.html` to see it on the page.
