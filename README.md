@@ -36,7 +36,7 @@ If everything ran successfully your `terminal(s)` output should look similiar:
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
 
-Having trouble? If you are having a premissions error with the global install try `sudo npm install -g webpack
+Having trouble? If you are having a premissions error with the global install try `sudo npm install -g webpack`.
 ## Step 1 - Bootstrapping the app
 #### Summary
 In this section we will be `bootstrapping`, or in other words, initially setting up our React app. We will build our first `component` and connect it to our `index.html` to see it on the page.
