@@ -32,7 +32,7 @@ To get this project going we need to install all the node modules. `npm install`
 
 `npm run dev`, this starts up our lite-server in your default browser and will monitor for file-changes to refresh the browser for us.
 
-If everything ran successfully your `terminal(s)` output should look similiar:
+If everything ran successfully a tab in your default browser should of opened and your `terminal(s)` output should look similiar:
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
 
