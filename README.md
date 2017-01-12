@@ -25,3 +25,10 @@ With this current file structure we can quickly determine where all our configur
 You may not know exactly how webpack and lite-server work, however I just wanted to briefly explain just how awesome they are. With them we can run two commands in the terminal that will open the default browser with our index.html for us, monitor any file changes, compile them, bundle them, and then reload our browser for us. It's the luxurious Mercedes of web development, you'll never want to go back to your 1999 Honda. 
 #### .babelrc and bs-config.json
 These are configuration files to get webpack and lite-server to run the way we want them to. .babelrc tells our babel loader which presets to use and bs-config.json tells our lite-server the directory of our index.html file to host.
+#### Starting up your Mercedes
+To get this project going we need to install all the node modules. `npm install` or `yarn install` ( highly recommend using yarn ). After installing all our modules, we are also going to want to have access to the CLI for webpack `npm install -g webpack`. 
+## Step 1 - Bootstrapping the app
+#### Summary
+In this section will be Bootstrapping, in other words, initially setting up our React app. We will build our first component and connect it to our index.html to see it on the page.
+#### Detail
+To get started, we are going to need two terminal windows/tabs open, three if you want to commit code along the way. In the first one we are going to tell webpack to compile/bundle and watch for future changes. 
