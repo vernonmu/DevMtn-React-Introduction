@@ -10,7 +10,7 @@ Having a clean and maintainable work environment is key is for development. Our 
   - src
 	- app
 	  - app.js
-	index.html
+	- index.html
 - .babelrc
 - .gitignore
 - .bs-config.json
