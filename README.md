@@ -6,11 +6,11 @@ Some modules provided in this setup for React may or may not be unfamiliar to yo
 Having a clean and maintainable work environment is key is for development. Our current file structure is:
 ````
 - public
-	- dist
-	- src
-		- app
-			- app.js
-		index.html
+  - dist
+  - src
+	- app
+	  - app.js
+	index.html
 - .babelrc
 - .gitignore
 - .bs-config.json
