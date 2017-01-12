@@ -34,3 +34,5 @@ In this section we will be `bootstrapping`, or in other words, initially setting
 To get started, we are going to need two `terminal` windows/tabs open, three if you want to commit code along the way. In the first one we are going to tell webpack to compile/bundle and watch for future changes ( `webpack -w` ). In the second one we are going to tell `lite-server` to host our `index.html` locally and watch for changes ( `npm run dev` ). If everything ran successfully your `terminal(s)` output should look similiar:
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initialRun.png "Initial Run")
+
+Having trouble? Make sure you `npm install` and also globally install webpack `npm install -g webpack`. If you are having a premissions error with the global install try `sudo npm install -g webpack`.
