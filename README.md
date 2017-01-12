@@ -19,3 +19,5 @@ Having a clean and maintainable work environment is key for development. Our cur
 - .webpack.config.js
 ````
 Why the public folder? Usually when creating a website you'll have a front-end and a back-end. It's a good idea to get into the habit of seperating the code for them. So even though there won't be a backend for this tutorial it doesn't hurt to use the same file structure. Also there are many different ways to structure your files to make them maintainable, this is just my way of doing so.
+
+With this current file structure we can quickly determine where all our configuration files are ( the root of the directory ), where all our front-end files are ( public folder ), and where all our source files are for editing the front-end ( public -> src folder ). 
