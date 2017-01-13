@@ -94,5 +94,6 @@ body {
 }
 ````
 
-## Step 2 - Adding functionality
+## Step 2 - Using state
 #### Summary
+In react state is an object that can determine how a component renders & behaves. It's very useful for dynamically updating elements on the DOM. In this example we are going to take a look at how state can affect our 'Add' button on the DOM.
