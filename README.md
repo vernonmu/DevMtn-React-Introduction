@@ -64,3 +64,5 @@ Paste the following into the empty return and move calculator.png into the publi
 	</div>
 </div>
 ````
+
+Paste the following styles into ( app -> src -> index.css )
