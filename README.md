@@ -68,3 +68,5 @@ Paste the following into the empty return and move calculator.png into the publi
 Paste the following styles into ( app -> src -> index.css )
 
 [Click Me](http://pastebin.com/1ps5qBUP)
+
+## Step 2 - Using State
