@@ -9,3 +9,23 @@ In your terminal type in `create-react-app app` when in the root directory of th
 After `create-react-app` has finished, you'll notice we now have a folder named app in the root of our project. Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initial-startup.png "Initial Startup")
+
+We are going to start fresh and completely erase inside the return statement in App.js ( public -> src -> App.js ). Your code should look like this:
+
+````jsx
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+render() {
+	return (
+		<div id='App'>
+
+		</div>
+	);
+}
+}
+
+export default App;
+````
