@@ -97,3 +97,82 @@ body {
 ## Step 2 - Using state
 #### Summary
 In react state is an object that can determine how a component renders & behaves. It's very useful for dynamically updating elements on the DOM. In this example we are going to take a look at how state can affect our 'Add' button on the DOM.
+#### Detail
+In order to use state, we need to add a constructor function that takes a parameter of props. 
+This constructor function goes right above the render function. 
+Inside of our new constructor function we can add a variable called this.state and set it equal to an empty object. 
+The possibilities are endless here, anything you put inside this state object, every element will have access to it.
+Let's add a property to this state object called add_label and set it equal to 'Add'.
+#### Code
+````jsx
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+	constructor(props) {
+		this.state = {
+			add_label: 'Add'
+		}
+	}
+
+	render() {
+		return (
+			<div id='App'>
+				<div id="container-main">
+					<input id="input-task" />
+					<button id="button-submit"> {this.state.add_label} </button>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default App;
+
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
