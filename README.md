@@ -18,13 +18,13 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-render() {
-	return (
-		<div id='App'>
+	render() {
+		return (
+			<div id='App'>
 
-		</div>
-	);
-}
+			</div>
+		);
+	}
 }
 
 export default App;
