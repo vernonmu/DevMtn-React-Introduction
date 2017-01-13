@@ -1,6 +1,6 @@
 # DevMtn-React-Introduction
 
-![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/finished.png "Finished Project")
+![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/finishedStyles.png "Finished Project")
 
 ## Setup
 For this setup we will be using create-react-app to quickly create our base for our react calculator project. To get started `npm install` or `yarn install` when in the root directory of the project. Be sure to also `sudo npm install -g create-react-app` to gain access to its CLI. Once everything is installed we're ready to create the project. 
@@ -10,7 +10,7 @@ In your terminal type in `create-react-app app` when in the root directory of th
 #### Summary
 After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
 
-![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initial-startup.png "Initial Startup")
+![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initalReact.png "Initial Startup")
 
 If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( app -> public -> src -> App.js ). Earse everything in between the return of the render function. Your code should look like this:
 
@@ -65,6 +65,8 @@ Paste the following into the empty return and move calculator.png into the publi
 </div>
 ````
 
-Paste the following styles into ( app -> src -> index.css )
+Paste over index.css with the following styles ( app -> src -> index.css )
 
 [Click Me](http://pastebin.com/1ps5qBUP)
+
+## Step 2 - Using State
