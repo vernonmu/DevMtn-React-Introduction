@@ -29,4 +29,8 @@ class App extends Component {
 
 export default App;
 ````
-#### Detail
+#### Code 
+Paste the following into the empty return:
+````jsx
+
+````
