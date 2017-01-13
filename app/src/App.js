@@ -4,8 +4,11 @@ import './App.css';
 
 class App extends Component {
 	constructor(props) {
+		super();
 		this.state = {
-			add_label: 'Add'
+			x: 0,
+			y: 0,
+			total: 0
 		}
 	}
 
@@ -13,8 +16,7 @@ class App extends Component {
 		return (
 			<div id='App'>
 				<div id="container-main">
-					<input id="input-task" />
-					<button id="button-submit"> {this.state.add_label} </button>
+					<img src="./calculator.png" />
 				</div>
 			</div>
 		);
