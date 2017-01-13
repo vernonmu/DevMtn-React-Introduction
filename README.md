@@ -30,7 +30,7 @@ class App extends Component {
 export default App;
 ````
 #### Code 
-Paste the following into the empty return:
+Paste the following into the empty return and move calculator.png into the public folder ( app -> public ):
 ````jsx
 <div id='App'>
 	<div id="container-main">
