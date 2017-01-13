@@ -10,7 +10,7 @@ After create-react-app has finished, you'll notice we now have a folder named ap
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initial-startup.png "Initial Startup")
 
-If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( public -> src -> App.js ). Earse everything in between the return of the render function. Your code should look like this:
+If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( app -> public -> src -> App.js ). Earse everything in between the return of the render function. Your code should look like this:
 
 ````jsx
 import React, { Component } from 'react';
@@ -20,7 +20,7 @@ import './App.css';
 class App extends Component {
 	render() {
 		return (
-			
+
 		);
 	}
 }
