@@ -68,6 +68,7 @@ body {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
+	background-color: papayawhip;
 }
 
 #container-main {
