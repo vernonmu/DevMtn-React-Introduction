@@ -73,11 +73,11 @@ Paste over index.css with the following styles ( app -> src -> index.css )
 What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them.
 
 
-In order to start using state, our Component needs a constructor function. This constructor function gives us access to props and also defines state values.
+In order to start using state, our component needs a constructor function. This constructor function gives us access to props and also defines state values.
 #### Detail
-Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call super() with or without a props parameter. Since we aren't doing anything with props on this main component we can just call super(). After calling super() we can use this.state = {} to start setting things on state. For this calculator to work we are going to need a couple variables.
+Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call super() with or without a props parameter. Since we aren't doing anything with props on this main component we can just call super(). After calling super() we can use this.state = {} to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
-Let's define in our state: `total`, `x`, `y`, and `display` and set them all with an initial value of `0`.
+Let's define in our state: `total`, `x`, `y`, and `display`. Set display with the initial value of `'0'` and the rest with the value of `0`. Notice how display is a string and the rest of the variables are an integer, this is very important.
 #### Code
 ````jsx
 constructor(props) {
