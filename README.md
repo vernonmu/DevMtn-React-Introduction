@@ -83,7 +83,7 @@ Let's define in our state: `total`, `x`, `y`, and `display`. Set display with th
 constructor(props) {
 	super();
 	this.state = {
-		display: 0,
+		display: '0',
 		total: 0,
 		x: 0,
 		y: 0
