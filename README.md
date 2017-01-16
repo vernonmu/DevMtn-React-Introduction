@@ -77,7 +77,7 @@ In order to start using state, our component needs a constructor function. This 
 #### Detail
 Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call super() with or without a props parameter. Since we aren't doing anything with props on this main component we can just call super(). After calling super() we can use this.state = {} to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
-Let's define in our state: `total`, `x`, `y`, and `display`. Set display with the initial value of `'0'` and the rest with the value of `0`. Notice how display is a string and the rest of the variables are an integer, this is very important.
+Let's define in our state: `total`, `x`, `y`, and `display`. Set display with the initial value of `'0'` and the rest with initial value of `0`. Notice how display is a string and the rest of the variables are integers, this is very imperative.
 #### Code
 ````jsx
 constructor(props) {
