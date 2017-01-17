@@ -151,3 +151,5 @@ setDisplay: (num) => {
 	this.setState({ display: this.state.display + num });
 }
 ````
+#### Code
+[App.js](http://pastebin.com/b1bSJGTB);
