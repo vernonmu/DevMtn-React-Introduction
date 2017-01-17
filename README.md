@@ -145,9 +145,9 @@ Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to
 <div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
 <div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
 ````
-Great, all our number button elements are ready to start changing `this.state.display`. Let's code our setDisplay function. In react to change state we always use `this.setState({})`. Since we are getting the number passed in as a parameter we can use `num` to update `this.state.display`.
+Great, all our number button elements are ready to start changing `this.state.display`. Let's code our setDisplay function. In react to change state we always use `this.setState({})`. Since we are getting the number passed in as a parameter we can use `num` to update `this.state.display`. The reason why `this.state.display` and the parameter we are passing are strings is so that we can use concatenation to update our calculator's display.
 ````jsx
 setDisplay: (num) => {
-	this.setState({ display: num });
+	this.setState({ display: this.state.display + num });
 }
 ````
