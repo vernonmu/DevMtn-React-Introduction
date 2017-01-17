@@ -68,25 +68,41 @@ Paste over index.css with the following styles ( app -> src -> index.css )
 
 [Click Me](http://pastebin.com/1ps5qBUP)
 
-## Step 2 - Using State
+## Step 2 - Assigning Variables to State
 #### Summary
 What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them.
 
-
 In order to start using state, our component needs a constructor function. This constructor function gives us access to props and also defines state values.
 #### Detail
-Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call super() with or without a props parameter. Since we aren't doing anything with props on this main component we can just call super(). After calling super() we can use this.state = {} to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
+Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()` with or without a props parameter. Since we aren't doing anything with props on this main component we can just call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
-Let's define in our state: `total`, `x`, `y`, and `display`. Set display with the initial value of `'0'` and the rest with initial value of `0`. Notice how display is a string and the rest of the variables are integers, this is very imperative.
+Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
 #### Code
 ````jsx
 constructor(props) {
 	super();
 	this.state = {
 		display: '0',
-		total: 0,
-		x: 0,
-		y: 0
+		operator: '',
+		temp: 0,
+		resetDisplay: false
 	}
 }
 ````
+## Step 3 - Displaying Numbers
+#### Summary
+In this step we are going to see how elements in our `render()` have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
+#### Detail
+To start, let's take a look at our div with the className of output. Inside that div we have a span with the className of total. This element sits in the output section of our calculator.
+
+Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`.
+
+With this current setup, any time we change `this.state.display` it will displayed in our span element. 
+
+````jsx
+<div className="output">
+	<span className="total"> { this.state.display } </span>
+</div>
+````
+
+Now we can create our function that will update our state property `display`.
