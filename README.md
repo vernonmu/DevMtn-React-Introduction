@@ -1,6 +1,6 @@
 # DevMtn-React-Introduction
 
-![calculator](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1.png "Finished Project")
+![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1.png "Finished Project")
 
 ## Setup
 For this setup we will be using create-react-app to quickly create our base for our react calculator project. To get started `npm install` or `yarn install` when in the root directory of the project. Be sure to also `sudo npm install -g create-react-app` to gain access to its CLI. Once everything is installed we're ready to create the project.
@@ -157,4 +157,4 @@ setDisplay: (num) => {
 #### Summary
 In this step we will be tweaking our calculator to handle certain scenarios. If we click on our buttons we can see that our display now updates. However our calculator keeps the initial 0 and also doesn't account for length and can break out of its container.
 
-![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/no-error-handle.png)
+![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2.png)
