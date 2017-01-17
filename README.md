@@ -105,4 +105,16 @@ With this current setup, any time we change `this.state.display` it will display
 </div>
 ````
 
-Now we can create our function that will update our state property `display`.
+Now we can create our function that will update our state property `display`. Since we want elements inside of our render function to have access to the setDisplay function we will create it as a property on state. Let's start with our one button.
+
+In react in order to trigger a function on a click event we use the attribute called `onClick={}`. Let's take a look at our div with the className of `btn one`.
+````jsx
+<div className="btn one"></div>
+````
+
+There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. The best way to picture this is imagine if you are React, bare with me here, and you are reading over these "instructions" and see `this.state.setDisplay();` it's being invoked and therefore React is going to execute it. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
+````jsx
+<div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
+```` 
+
+Now when React reads over this, it is a function that is not being invoked. 

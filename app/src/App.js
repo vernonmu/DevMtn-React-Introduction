@@ -15,7 +15,7 @@ class App extends Component {
 					this.setState({ display: num, temp: 0, operator: '', resetDisplay: false });
 				} else {
 					display = ( this.state.display === '0' ) ? num : this.state.display + num;
-					this.setState({ display: display })
+					this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
 				}
  			},
 			clearDisplay: () => {
