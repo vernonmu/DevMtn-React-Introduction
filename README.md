@@ -114,7 +114,8 @@ this.state = {
 	resetDisplay: false,
 	setDisplay: (num) => {
 
-	},
+	}
+}
 ````
 
 In react in order to trigger a function on a click event we use the attribute called `onClick={}`. Let's take a look at our div with the className of `btn one`.
