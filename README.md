@@ -105,7 +105,17 @@ With this current setup, any time we change `this.state.display` it will display
 </div>
 ````
 
-Now we can create our function that will update our state property `display`. Since we want elements inside of our render function to have access to the setDisplay function we will create it as a property on state. Let's start with our one button.
+Now we can create our function that will update our state property `display`. Since we want elements inside of our render function to have access to the setDisplay function we will create it as a property on state.
+````jsx
+this.state = {
+	display: '0',
+	operator: '',
+	temp: 0,
+	resetDisplay: false,
+	setDisplay: (num) => {
+
+	},
+````
 
 In react in order to trigger a function on a click event we use the attribute called `onClick={}`. Let's take a look at our div with the className of `btn one`.
 ````jsx
@@ -134,3 +144,4 @@ Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to
 <div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
 <div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
 ````
+Great, all our number button elements are ready to start changing `this.state.display`. Let's code our setDisplay function. 
