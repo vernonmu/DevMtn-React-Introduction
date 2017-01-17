@@ -117,4 +117,4 @@ There is a little bit of a trick to this however. We cannot simply just add `onC
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ```` 
 
-Now when react reads over this, it is a function that is not being invoked. 
+Now when react reads over this, it is a function that is not being invoked and therefore will not be executed on render. 
