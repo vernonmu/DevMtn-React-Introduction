@@ -116,4 +116,9 @@ There is a little bit of a trick to this however. We cannot simply just add `onC
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ```` 
-Now when react reads over this, it is a function that is not being invoked and therefore will not be executed on render. 
+Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
+````jsx
+<div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
+```` 
+
+Let's copy and paste `onClick={ () => { this.state.setDisplay('1'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
