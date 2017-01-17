@@ -121,4 +121,4 @@ Now when react reads over this it is a function that is not being invoked and th
 <div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
 ```` 
 
-Let's copy and paste `onClick={ () => { this.state.setDisplay('1'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
+Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
