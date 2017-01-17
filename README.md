@@ -53,7 +53,6 @@ Paste the following into the empty return and move calculator.png into the publi
 			<div className="btn eight"></div>
 			<div className="btn nine"></div>
 
-			<div className="btn decimal"></div>
 			<div className="btn equal"></div>
 			<div className="btn multiply"></div>
 			<div className="btn divide"></div>
@@ -66,7 +65,7 @@ Paste the following into the empty return and move calculator.png into the publi
 
 Paste over index.css with the following styles ( app -> src -> index.css )
 
-[Click Me](http://pastebin.com/1ps5qBUP)
+[Click Me](http://pastebin.com/iBgbL3NQ)
 
 ## Step 2 - Assigning Variables to State
 #### Summary
