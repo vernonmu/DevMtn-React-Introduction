@@ -112,9 +112,9 @@ In react in order to trigger a function on a click event we use the attribute ca
 <div className="btn one"></div>
 ````
 
-There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. The best way to picture this is imagine if you are React, bare with me here, and you are reading over these "instructions" and see `this.state.setDisplay();` it's being invoked and therefore React is going to execute it. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
+There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. The best way to picture this is imagine if you are React, bare with me here, and you are reading over these "instructions" and see `this.state.setDisplay();` it's being invoked and therefore react is going to execute it. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ```` 
 
-Now when React reads over this, it is a function that is not being invoked. 
+Now when react reads over this, it is a function that is not being invoked. 
