@@ -6,29 +6,48 @@ class App extends Component {
 		super();
 		this.state = {
 			display: '0',
-			total: 0,
-			x: 0,
-			y: 0,
+			operator: '',
+			temp: 0,
+			resetDisplay: false,
 			setDisplay: (num) => {
 				var display;
-				if ( this.state.display.length === 12 ) { return; }
-				display = (this.state.display === '0') ? num : this.state.display + num;
-				this.setState({ display: display });
-			},
+				if ( this.state.resetDisplay ) {
+					this.setState({ display: num, temp: 0, operator: '', resetDisplay: false });
+				} else {
+					display = ( this.state.display === '0' ) ? num : this.state.display + num;
+					this.setState({ display: display })
+				}
+ 			},
 			clearDisplay: () => {
-				this.setState({ display: '0', total: 0, x: 0, y: 0 });
+				this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
 			},
-			add: () => {
-
+			setOperator: (operator) => {
+				if ( !this.state.operator ) {
+					this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' });
+				}
 			},
-			subtract: () => {
+			calculate: () => {
+				var result;
+				if ( this.state.resetDisplay || this.state.temp === 0 ) { return; }
 
-			},
-			multiply: () => {
+				switch( this.state.operator ) {
+					case '+':
+						result = parseInt(this.state.display, 10) + this.state.temp;
+						break;
+					case '-':
+						result = parseInt(this.state.display, 10) - this.state.temp;
+						break;
+					case '*':
+						result = parseInt(this.state.display, 10) * this.state.temp;
+						break;
+					case '/':
+						result = parseInt(this.state.display, 10) / this.state.temp;
+						break;
+					default:
+						break;
+				}
 
-			},
-			divide: () => {
-
+				this.setState({ display: result, resetDisplay: true })
 			}
 		}
 	}
@@ -41,7 +60,7 @@ class App extends Component {
 					<div id="calculator-mask" className="remove-highlight">
 
 						<div className="output">
-							<span className="total"> { this.state.display }</span>
+							<span className="total"> { this.state.display } </span>
 						</div>
 
 						<div className="btn clear" 	onClick={ () => { this.state.clearDisplay(); }}></div>
@@ -57,12 +76,11 @@ class App extends Component {
 						<div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
 						<div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
 
-						<div className="btn decimal"></div>
-						<div className="btn equal"></div>
-						<div className="btn multiply"></div>
-						<div className="btn divide"></div>
-						<div className="btn subtract"></div>
-						<div className="btn add"></div>
+						<div className="btn equal"		onClick={ () => { this.state.calculate(); } }></div>
+						<div className="btn multiply"	onClick={ () => { this.state.setOperator('*'); } }></div>
+						<div className="btn divide"		onClick={ () => { this.state.setOperator('/'); } }></div>
+						<div className="btn subtract" 	onClick={ () => { this.state.setOperator('-'); } }></div>
+						<div className="btn add"		onClick={ () => { this.state.setOperator('+'); } }></div>
 					</div>
 				</div>
 			</div>
