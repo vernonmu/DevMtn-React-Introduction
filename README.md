@@ -12,6 +12,9 @@ After create-react-app has finished, you'll notice we now have a folder named ap
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initalReact.png "Initial Startup")
 
+In this step we are going to change the default react landing page to our calculator.
+
+#### Detail
 If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( app -> public -> src -> App.js ). Erase everything in between the return of the render function. Also let's remove the logo import since we won't be using it. Your code should look like this:
 
 ````jsx
@@ -67,13 +70,26 @@ Paste over index.css with the following styles ( app -> src -> index.css )
 
 [Click Me](http://pastebin.com/iBgbL3NQ)
 
+#### Preview
+If everything worked correctly your browser should look like this:
+![png]()
+
 ## Step 2 - Assigning Variables to State
 #### Summary
-What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them.
+What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them. For example if you had:
+````jsx
+this.state = {
+	header: 'My Awesome Header'
+}
 
-In order to start using state, our component needs a constructor function. This constructor function gives us access to props and also defines state values.
+<span id="header"> {this.state.header} </span>
+````
+Now our header span tag is using the header property on state, when the element is rendered on the DOM it will have the text of 'My Awesome Header'. And whenever we change `this.state.header` it will automatically update our span's text.
+
+In this step we are going to create a constructor function which is required in order to use state. We also define some key variables our calculator will need in order to function.
+
 #### Detail
-Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()` with or without a props parameter. Since we aren't doing anything with props on this main component we can just call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
+Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
 Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
 #### Code
@@ -96,7 +112,7 @@ To start, let's take a look at our div with the className of output. Inside that
 
 Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`.
 
-With this current setup, any time we change `this.state.display` it will displayed in our span element. 
+With this current setup, any time we change `this.state.display` it will displayed in our span element.
 
 ````jsx
 <div className="output">
@@ -125,11 +141,11 @@ In react in order to trigger a function on a click event we use the attribute ca
 There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
-```` 
+````
 Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
-```` 
+````
 
 Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
 ````jsx
