@@ -72,7 +72,7 @@ Paste over index.css with the following styles ( app -> src -> index.css )
 
 #### Preview
 If everything worked correctly your browser should look like this:
-![png]()
+![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
 ## Step 2 - Assigning Variables to State
 #### Summary
