@@ -86,7 +86,7 @@ this.state = {
 ````
 Now our header span tag is using the header property on state, when the element is rendered on the DOM it will have the text of 'My Awesome Header'. And whenever we change `this.state.header` it will automatically update our span's text.
 
-In this step we are going to create a constructor function which is required in order to use state. We also define some key variables our calculator will need in order to function.
+In this step we are going to create a constructor function which is required in order to use state. We will also define some key variables our calculator will need in order to function.
 
 #### Detail
 Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
