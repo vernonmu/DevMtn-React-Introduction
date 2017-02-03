@@ -498,7 +498,7 @@ calculate: () => {
 	if ( this.state.temp === 0 ) { return; }
 }
 ````
-This is a good way to prevent our program from breaking and preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected. 
+This is a good way to prevent our program from breaking or preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected. 
 
 The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
 ````jsx
