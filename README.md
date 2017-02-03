@@ -411,6 +411,7 @@ setDisplay: (num) => {
 ### Solution
 ![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
 
+---
 ## Step 5
 ### Summary
 In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter. 
