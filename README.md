@@ -587,3 +587,10 @@ clearDisplay: () => {
 
 ### Solution
 ![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/3g.gif)
+
+---
+## Black Diamond
+### Instructions
+Figure out how to use the resetDisplay state property so that the user can start doing other math operations when clicking on a number after pressing equals.
+### Solution
+![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/4g.gif)
