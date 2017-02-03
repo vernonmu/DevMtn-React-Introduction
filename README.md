@@ -14,7 +14,7 @@ Change your directory, using your terminal, to inside of the app folder ( `cd ap
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initalReact.png "Initial Startup")
 
-If a browser didn't pop up for, double check that your terminal is in the app folder.
+If a browser didn't pop up for you, double check that your terminal is in the app folder.
 
 In this step we are going to change the default react landing page to our calculator.
 
@@ -67,11 +67,143 @@ export default App;
 ````
 </details>
 
-Paste over index.css with the following styles ( app -> src -> index.css )
+In addition to App.js we are going to over-write index.css ( app -> src -> index.css ) with the following code:
+<details>
+<summary> index.css </summary>
+````css
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
 
-[Click Me](http://pastebin.com/iBgbL3NQ)
+.remove-highlight {
+	user-select: none;
+}
 
-#### Preview
+#container-main {
+	height: 267px;
+}
+
+#calculator-mask {
+	width: 325px;
+	height: 267px;
+	position: relative;
+	top: -272px;
+}
+
+.btn {
+	width: 66px;
+	height: 40px;
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.output {
+	position: absolute;
+	width: 212px;
+	height: 40px;
+	top: 21px;
+	left: 93px;
+}
+
+.total {
+	position: absolute;
+	right: 7px;
+	bottom: 3px;
+	font-size: 27px;
+	color: burlywood;
+}
+
+.clear {
+	left: 20px;
+	bottom: 206px;
+}
+
+.zero {
+	bottom: 18px;
+	left: 20px;
+}
+
+.one {
+	bottom: 65px;
+	left: 20px;
+}
+
+.two {
+	bottom: 65px;
+	left: 93px;
+}
+
+.three {
+	bottom: 65px;
+	left: 166px;
+}
+
+.four {
+	bottom: 112px;
+	left: 20px;
+}
+
+.five {
+	bottom: 112px;
+	left: 93px;
+}
+
+.six {
+	bottom: 112px;
+	left: 166px;
+}
+
+.seven {
+	bottom: 159px;
+	left: 20px;
+}
+
+.eight {
+	bottom: 159px;
+	left: 93px;
+}
+
+.nine {
+	bottom: 159px;
+	left: 166px;
+}
+
+.equal {
+	bottom: 18px;
+	left: 166px;
+}
+
+.multiply {
+	bottom: 18px;
+	left: 239px;
+}
+
+.divide {
+	bottom: 65px;
+	left: 239px;
+}
+
+.subtract {
+	bottom: 112px;
+	left: 239px;
+}
+
+.add {
+	bottom: 159px;
+	left: 239px;
+}
+````
+</details>
+
+#### Solution
 If everything worked correctly your browser should look like this:
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
