@@ -404,4 +404,4 @@ setDisplay: (num) => {
 </details>
 
 ### Solution
-![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/4.png)
+![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
