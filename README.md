@@ -469,3 +469,19 @@ Why parseInt? Since we are going to do math on these numbers I used parseInt on 
 
 ### Solution
 ![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1-4g.gif)
+
+---
+## Step 6
+### Summary
+In this step we will be adding a calculate function that will preform the user selected operation. 
+
+### Detailed Instructions
+To start let's take a look at our App.js and find the element that corresponds to the equal button. 
+````jsx
+<div className="btn equal"></div>
+````
+Using the `onClick={}` attribute call the calculate function. Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
+````jsx
+<div className="btn equal"		onClick={ () => { this.state.calculate(); } }></div>
+````
+
