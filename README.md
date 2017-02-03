@@ -388,4 +388,18 @@ setDisplay: (num) => {
 }
 ````
 </details>
-##### Keep length contained in output field
+
+#### Keep length contained in output field
+With the current size of the output field you can fit about 13 characters before breaking outside the border. Therefore, we can check to see if the length of display is less than 13 characters before updating state.
+##### Solution
+<details>
+<summary> setDisplay Fn </summary>
+````jsx
+setDisplay: (num) => {
+		var display = ( this.state.display === '0' ) ? num : this.state.display + num;
+		this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
+	}
+}
+````
+</details>
+
