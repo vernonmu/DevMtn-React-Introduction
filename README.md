@@ -369,15 +369,15 @@ export default App;
 </details>
 
 ## Step 4 - Error Handling
-#### Summary
+### Summary
 In this step we will be tweaking our calculator to handle certain scenarios. If we click on our buttons we can see that our display now updates. However our calculator keeps the initial 0 and also doesn't account for length and can break out of its container.
 
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2.png)
 
-#### Detailed Instructions
-##### Exclude initial 0
+### Detailed Instructions
+#### Exclude initial 0
 In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
-###### Solution
+##### Solution
 <details>
 <summary> setDisplay Fn </summary>
 ````jsx
