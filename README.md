@@ -453,4 +453,11 @@ setOperator: (operator) => {
 }
 ````
 
-Now code will only run on this method if the operator hasn't been set.
+Now code will only run on this method if the operator hasn't been set. Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
+````jsx 
+setOperator: (operator) => {
+	if (!this.state.operator) {
+		this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
+	}
+}
+````
