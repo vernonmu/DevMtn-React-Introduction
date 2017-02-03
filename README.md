@@ -443,3 +443,14 @@ setOperator: (operator) => {
 
 }
 ````
+
+If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a truthy value since we initialized it as `''` which is a falsy value.
+````jsx
+setOperator: (operator) => {
+	if (!this.state.operator) {
+
+	}
+}
+````
+
+Now code will only run on this method if the operator hasn't been set.
