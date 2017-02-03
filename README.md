@@ -382,8 +382,8 @@ In order to remove the first 0 we can check to see if the display is currently '
 <summary> setDisplay Fn </summary>
 ````jsx
 setDisplay: (num) => {
-	var display = ( this.state.display === '0' ) ? num : this.state.display + num;
-		this.setState({ display: display })
+		var display = ( this.state.display === '0' ) ? num : this.state.display + num;
+		this.setState({ display: display });
 	}
 }
 ````
