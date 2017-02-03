@@ -18,7 +18,7 @@ If a browser didn't pop up for you, double check that your terminal is in the ap
 
 In this step we are going to change the default react landing page to our calculator.
 
-#### Detail
+#### Detailed Instructions
 If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
 <details>
 <summary> App.js </summary>
@@ -207,9 +207,11 @@ body {
 If everything worked correctly your browser should look like this:
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
-## Step 2 - Assigning Variables to State
+## Step 2
 #### Summary
-What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them. For example if you had:
+In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, int, strings, functions, etc... 
+
+For example if you had:
 ````jsx
 this.state = {
 	header: 'My Awesome Header'
@@ -217,11 +219,11 @@ this.state = {
 
 <span id="header"> {this.state.header} </span>
 ````
-Now our header span tag is using the header property on state, when the element is rendered on the DOM it will have the text of 'My Awesome Header'. And whenever we change `this.state.header` it will automatically update our span's text.
+On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updated the span tag will update with it. 
 
-In this step we are going to create a constructor function which is required in order to use state. We will also define some key variables our calculator will need in order to function.
+For example: If we had a button click function that changed `this.state.header` to "Other Header", the span tag on the DOM will then render in with the new value of "Other Header."
 
-#### Detail
+#### Detailed Instructions
 Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
 Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
