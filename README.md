@@ -365,7 +365,7 @@ class App extends Component {
 }
 
 export default App;
-````jsx
+````
 </details>
 
 ## Step 4 - Error Handling
