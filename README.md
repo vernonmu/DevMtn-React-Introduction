@@ -367,7 +367,7 @@ class App extends Component {
 export default App;
 ````
 </details>
-
+---
 
 ## Step 4
 ### Summary
