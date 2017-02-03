@@ -417,3 +417,10 @@ There are a couple things to consider on this step. When a user types in their f
 3. Clear the display for the second number. 
 
 We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
+
+If we take a look in our App.js we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `multiply`. Using an `onClick={}` we can call a function on state called `setOperator` that takes an operator.
+
+* '+' - Used for addition
+* '-' - Used for subtraction
+* '*' - Used for multiplication
+* '/' - Used for division
