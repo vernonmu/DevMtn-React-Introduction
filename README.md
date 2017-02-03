@@ -523,7 +523,9 @@ calculate: () => {
 	}
 }
 ````
-To avoid having 4 different `this.setState({})` let's create a variable called result and update its value and use one `this.setState({})` after the switch statement has completed. Our variable result should be equal to the `this.state.temp` value ( +, -, *, / ) the current `this.state.display` value. Make sure to parseInt `this.state.display`
+To avoid having 4 different `this.setState({})` let's create a variable called result and update its value and use one `this.setState({})` after the switch statement has completed. Our variable result should be equal to the `this.state.temp` value ( +, -, *, / ) the current `this.state.display` value.
+
+Make sure to parseInt `this.state.display`
 <details>
 <summary> Calculate Fn </summary>
 ````jsx
