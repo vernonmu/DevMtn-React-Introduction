@@ -6,6 +6,8 @@
 For this setup we will be using create-react-app to quickly create our base for our react calculator project. To get started `npm install` or `yarn install` when in the root directory of the project. Be sure to also `sudo npm install -g create-react-app` to gain access to its CLI. Once everything is installed we're ready to create the project.
 
 In your terminal type in `create-react-app app` when in the root directory of the project. This process may take up to 5 minutes depending on your internet speed.
+
+---
 ## Step 1
 ### Summary
 After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`. 
@@ -207,6 +209,7 @@ body {
 If everything worked correctly your browser should look like this:
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
+---
 ## Step 2
 ### Summary
 In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc... 
@@ -243,6 +246,7 @@ constructor(props) {
 ````
 </details>
 
+---
 ## Step 3
 ### Summary
 In this step we are going to see how elements in our `render()` function have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
