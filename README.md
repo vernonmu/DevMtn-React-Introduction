@@ -545,5 +545,7 @@ calculate: () => {
 		default:
 			break;
 	}
+
+	this.setState({ display: result });
 }
 ````
