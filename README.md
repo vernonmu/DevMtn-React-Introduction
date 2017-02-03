@@ -10,7 +10,7 @@ In your terminal type in `create-react-app app` when in the root directory of th
 ---
 ## Step 1
 ### Summary
-After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`. 
+After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`.
 
 Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts that create-react-app made for us in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
 
@@ -212,7 +212,7 @@ If everything worked correctly your browser should look like this:
 ---
 ## Step 2
 ### Summary
-In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc... 
+In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc...
 
 For example if you had:
 ````jsx
@@ -222,7 +222,7 @@ this.state = {
 
 <span id="header"> {this.state.header} </span>
 ````
-On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updates the span tag will update with it. 
+On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updates the span tag will update with it.
 
 For example: If we had a button click function that changed `this.state.header` to "Other Header", the span tag on the DOM will then render in with the new value of "Other Header."
 
@@ -253,7 +253,7 @@ In this step we are going to see how elements in our `render()` function have ac
 ### Detailed Instructions
 To start, let's take a look at our div with the className of output. Inside that div we have a span with the className of total. This element sits in the output section of our calculator.
 
-Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`. 
+Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`.
 
 With this current setup, any time we change `this.state.display` it will displayed in our span element.
 
@@ -285,7 +285,7 @@ There is a little bit of a trick to this however. We cannot simply just add `onC
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ````
-Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. 
+Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render.
 
 We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ````jsx
@@ -414,14 +414,14 @@ setDisplay: (num) => {
 ---
 ## Step 5
 ### Summary
-In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter. 
+In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter.
 ### Detailed Instructions
-There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things. 
+There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things.
 
-1. Save which operator the user chooses 
+1. Save which operator the user chooses
 2. Only allow for the operator to be selected once
 3. Save the first number the user inputted
-4. Clear the display for the second number 
+4. Clear the display for the second number
 
 We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
 
@@ -457,7 +457,7 @@ setOperator: (operator) => {
 ````
 
 Now code will only run on this method if the operator hasn't been set. Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
-````jsx 
+````jsx
 setOperator: (operator) => {
 	if (!this.state.operator) {
 		this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
@@ -473,10 +473,10 @@ Why parseInt? Since we are going to do math on these numbers I used parseInt on 
 ---
 ## Step 6
 ### Summary
-In this step we will be adding a calculate function that will preform the user selected operation. 
+In this step we will be adding a calculate function that will preform the user selected operation.
 
 ### Detailed Instructions
-To start let's take a look at our App.js and find the element that corresponds to the equal button. 
+To start let's take a look at our App.js and find the element that corresponds to the equal button.
 ````jsx
 <div className="btn equal"></div>
 ````
@@ -490,7 +490,7 @@ calculate: () => {
 
 }
 ````
-There are some scenarios to consider when creating this function. For example, how do we know when we press the equal button that the user has already selected an operator? Well, if we look at our code base when we select an operator we update the operator and temp properties. We can use these as a source of truth for determining if we should preform a math operation. 
+There are some scenarios to consider when creating this function. For example, how do we know when we press the equal button that the user has already selected an operator? Well, if we look at our code base when we select an operator we update the operator and temp properties. We can use these as a source of truth for determining if we should preform a math operation.
 
 Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
 ````jsx
@@ -498,37 +498,52 @@ calculate: () => {
 	if ( this.state.temp === 0 ) { return; }
 }
 ````
-This is a good way to prevent our program from breaking or preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected. 
+This is a good way to prevent our program from breaking or preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected.
 
 The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
 ````jsx
 calculate: () => {
-	if ( this.state.temp === 0 ) { return; } 
+	if ( this.state.temp === 0 ) { return; }
 
 	switch ( this.state.operator ) {
-
-	}
-}
-````
-
-	var result;
-	if ( this.state.resetDisplay || this.state.temp === 0 ) { return; }
-
-	switch( this.state.operator ) {
 		case '+':
-			result = parseInt(this.state.display, 10) + this.state.temp;
+
 			break;
 		case '-':
-			result = parseInt(this.state.display, 10) - this.state.temp;
+
 			break;
 		case '*':
-			result = parseInt(this.state.display, 10) * this.state.temp;
+
 			break;
 		case '/':
-			result = parseInt(this.state.display, 10) / this.state.temp;
+
 			break;
 		default:
 			break;
 	}
+}
+````
+To avoid having 4 different `this.setState({})` let's create a variable called result and update its value and use one `this.setState({})` after the switch statement has completed. Our variable result should be equal to the `this.state.temp` value ( +, -, *, / ) the current `this.state.display` value. Make sure to parseInt `this.state.display`
+````jsx
+calculate: () => {
+	if ( this.state.temp === 0 ) { return; }
+	var result;
 
-	this.setState({ display: result, resetDisplay: true });
+	switch ( this.state.operator ) {
+		case '+':
+			result = this.state.temp + parseInt(this.state.display, 10);
+			break;
+		case '-':
+			result = this.state.temp - parseInt(this.state.display, 10);
+			break;
+		case '*':
+			result = this.state.temp * parseInt(this.state.display, 10);
+			break;
+		case '/':
+			result = this.state.temp / parseInt(this.state.display, 10);
+			break;
+		default:
+			break;
+	}
+}
+````
