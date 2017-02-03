@@ -482,6 +482,6 @@ To start let's take a look at our App.js and find the element that corresponds t
 ````
 Using the `onClick={}` attribute call the calculate function. Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
 ````jsx
-<div className="btn equal"		onClick={ () => { this.state.calculate(); } }></div>
+<div className="btn equal" onClick={ () => { this.state.calculate(); } }></div>
 ````
 
