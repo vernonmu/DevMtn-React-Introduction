@@ -561,3 +561,36 @@ calculate: () => {
 
 ### Solution
 ![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2g.gif)
+
+---
+## Step 7
+### Summary
+Last but not least, in this step we will be making the clear button work. 
+
+### Detailed Instructions
+In our App.js find the element with the `clear` class and let's add an `onClick={}` attribute to call a clearDisplay function.
+````jsx
+<div className="btn clear" 	onClick={ () => { this.state.clearDisplay(); }}></div>
+````
+In our state let's add our last property `clearDisplay`
+````jsx
+clearDisplay: () => {
+
+}
+````
+When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value.
+````jsx
+clearDisplay: () => {
+	this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
+}
+````
+
+### Solution
+![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/3g.gif)
+
+---
+## Black Diamond
+### Instructions
+Figure out how to use the resetDisplay state property so that the user can start doing other math operations when clicking on a number after pressing equals.
+### Solution
+![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/4g.gif)
