@@ -19,8 +19,9 @@ If a browser didn't pop up for, double check that your terminal is in the app fo
 In this step we are going to change the default react landing page to our calculator.
 
 #### Detail
-If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( app -> public -> src -> App.js ). Erase everything in between the return of the render function. Also let's remove the logo import since we won't be using it. Your code should look like this:
-
+If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
+<details>
+<summary> App.js </summary>
 ````jsx
 import React, { Component } from 'react';
 import './App.css';
@@ -69,6 +70,7 @@ Paste the following into the empty return and move calculator.png into the publi
 	</div>
 </div>
 ````
+</details>
 
 Paste over index.css with the following styles ( app -> src -> index.css )
 
