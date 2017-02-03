@@ -245,11 +245,11 @@ constructor(props) {
 
 ## Step 3 - Displaying Numbers
 #### Summary
-In this step we are going to see how elements in our `render()` have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
-#### Detail
+In this step we are going to see how elements in our `render()` function have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
+#### Detailed Instructions
 To start, let's take a look at our div with the className of output. Inside that div we have a span with the className of total. This element sits in the output section of our calculator.
 
-Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`.
+Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`. 
 
 With this current setup, any time we change `this.state.display` it will displayed in our span element.
 
@@ -281,7 +281,9 @@ There is a little bit of a trick to this however. We cannot simply just add `onC
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ````
-Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
+Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. 
+
+We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
 ````
