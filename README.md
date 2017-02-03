@@ -65,11 +65,6 @@ class App extends Component {
 
 export default App;
 ````
-#### Code
-Paste the following into the empty return and move calculator.png into the public folder ( app -> public ):
-````jsx
-
-````
 </details>
 
 Paste over index.css with the following styles ( app -> src -> index.css )
