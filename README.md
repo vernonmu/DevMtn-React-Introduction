@@ -424,3 +424,14 @@ If we take a look in our App.js we'll see we have four elements with classes of 
 * '-' - Used for subtraction
 * '*' - Used for multiplication
 * '/' - Used for division
+
+Using the following symbols and the `onClick={}` attribute we should end up with the following code:
+<details>
+<summary> App.js </summary>
+````jsx
+<div className="btn multiply"	onClick={ () => { this.state.setOperator('*'); } }></div>
+<div className="btn divide"		onClick={ () => { this.state.setOperator('/'); } }></div>
+<div className="btn subtract" 	onClick={ () => { this.state.setOperator('-'); } }></div>
+<div className="btn add"		onClick={ () => { this.state.setOperator('+'); } }></div>
+````
+</details>
