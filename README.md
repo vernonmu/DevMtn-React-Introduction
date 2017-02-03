@@ -219,15 +219,17 @@ this.state = {
 
 <span id="header"> {this.state.header} </span>
 ````
-On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updated the span tag will update with it. 
+On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updates the span tag will update with it. 
 
 For example: If we had a button click function that changed `this.state.header` to "Other Header", the span tag on the DOM will then render in with the new value of "Other Header."
 
 #### Detailed Instructions
-Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
+Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()` inside of the constructor function. After calling `super()` we can use `this.state = {}` to start setting properties on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
 Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
-#### Code
+#### Solution
+<details>
+<summary> Constructor Fn </summary>
 ````jsx
 constructor(props) {
 	super();
@@ -239,6 +241,8 @@ constructor(props) {
 	}
 }
 ````
+</details>
+
 ## Step 3 - Displaying Numbers
 #### Summary
 In this step we are going to see how elements in our `render()` have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
