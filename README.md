@@ -558,3 +558,6 @@ calculate: () => {
 }
 ````
 </details>
+
+### Solution
+![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2g.gif)
