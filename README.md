@@ -578,9 +578,12 @@ clearDisplay: () => {
 
 }
 ````
-When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value
+When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value.
 ````jsx
 clearDisplay: () => {
 	this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
 }
 ````
+
+### Solution
+![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/3g.gif)
