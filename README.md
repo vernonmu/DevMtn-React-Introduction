@@ -410,11 +410,12 @@ setDisplay: (num) => {
 ### Summary
 In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter. 
 ### Detailed Instructions
-There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do three things. 
+There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things. 
 
 1. Save which operator the user choses 
-2. Save the first number the user inputted
-3. Clear the display for the second number. 
+2. Only allow for the operator to be selected once
+3. Save the first number the user inputted
+4. Clear the display for the second number 
 
 We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
 
@@ -435,3 +436,10 @@ Using the following symbols and the `onClick={}` attribute we should end up with
 <div className="btn add"		onClick={ () => { this.state.setOperator('+'); } }></div>
 ````
 </details>
+
+We can now code our setOperator function on state that will take the `operator` parameter.
+````jsx
+setOperator: (operator) => {
+
+}
+````
