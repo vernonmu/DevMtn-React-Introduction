@@ -7,7 +7,7 @@ For this setup we will be using create-react-app to quickly create our base for 
 
 In your terminal type in `create-react-app app` when in the root directory of the project. This process may take up to 5 minutes depending on your internet speed.
 ## Step 1
-#### Summary
+### Summary
 After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`. 
 
 Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts that create-react-app made for us in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
@@ -18,7 +18,7 @@ If a browser didn't pop up for you, double check that your terminal is in the ap
 
 In this step we are going to change the default react landing page to our calculator.
 
-#### Detailed Instructions
+### Detailed Instructions
 If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
 <details>
 <summary> App.js </summary>
@@ -208,7 +208,7 @@ If everything worked correctly your browser should look like this:
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
 ## Step 2
-#### Summary
+### Summary
 In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc... 
 
 For example if you had:
@@ -223,7 +223,7 @@ On render the span with the id of header is going to use whatever was assigned t
 
 For example: If we had a button click function that changed `this.state.header` to "Other Header", the span tag on the DOM will then render in with the new value of "Other Header."
 
-#### Detailed Instructions
+### Detailed Instructions
 Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()` inside of the constructor function. After calling `super()` we can use `this.state = {}` to start setting properties on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
 Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
@@ -244,9 +244,9 @@ constructor(props) {
 </details>
 
 ## Step 3
-#### Summary
+### Summary
 In this step we are going to see how elements in our `render()` function have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
-#### Detailed Instructions
+### Detailed Instructions
 To start, let's take a look at our div with the className of output. Inside that div we have a span with the className of total. This element sits in the output section of our calculator.
 
 Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`. 
@@ -307,7 +307,7 @@ setDisplay: (num) => {
 	this.setState({ display: this.state.display + num });
 }
 ````
-#### Solution
+### Solution
 <details>
 <summary> App.js </summary>
 ````jsx
@@ -368,7 +368,7 @@ export default App;
 ````
 </details>
 
-## Step 4 - Error Handling
+## Step 4
 ### Summary
 In this step we will be tweaking our calculator to handle certain scenarios. If we click on our buttons we can see that our display now updates. However our calculator keeps the initial 0 and also doesn't account for length and can break out of its container.
 
