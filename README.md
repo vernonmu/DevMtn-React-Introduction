@@ -462,4 +462,4 @@ setOperator: (operator) => {
 }
 ````
 
-Why parseInt? Since we are going to doing math on these numbers I used parseInt on the current display so I wouldn't have to use it later. The reason why there is `, 10` is to avoid liniting errors that create-react-app has.
+Why parseInt? Since we are going to do math on these numbers I used parseInt on the current display so I wouldn't have to use it later. The reason why there is `, 10` is to avoid liniting warnings that create-react-app has.
