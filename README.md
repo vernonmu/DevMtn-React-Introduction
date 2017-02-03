@@ -209,7 +209,7 @@ If everything worked correctly your browser should look like this:
 
 ## Step 2
 #### Summary
-In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, int, strings, functions, etc... 
+In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc... 
 
 For example if you had:
 ````jsx
