@@ -6,17 +6,22 @@
 For this setup we will be using create-react-app to quickly create our base for our react calculator project. To get started `npm install` or `yarn install` when in the root directory of the project. Be sure to also `sudo npm install -g create-react-app` to gain access to its CLI. Once everything is installed we're ready to create the project.
 
 In your terminal type in `create-react-app app` when in the root directory of the project. This process may take up to 5 minutes depending on your internet speed.
-## Step 1 - Creating the layout for our main component
+## Step 1
 #### Summary
-After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
+After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`. 
+
+Change your directory, using your terminal, to inside of the app folder ( `cd app` ) so we can have access to the pre-defined scripts that create-react-app made for us in the package.json. If we run `npm start` you should see your default browser pop-up and see the react landing page.
 
 ![alt text](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/initalReact.png "Initial Startup")
 
+If a browser didn't pop up for you, double check that your terminal is in the app folder.
+
 In this step we are going to change the default react landing page to our calculator.
 
-#### Detail
-If we look in our App.js we will see create-react-app created our first component for us. But we are going to alter it to make a calculator ( app -> public -> src -> App.js ). Erase everything in between the return of the render function. Also let's remove the logo import since we won't be using it. Your code should look like this:
-
+#### Detailed Instructions
+If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
+<details>
+<summary> App.js </summary>
 ````jsx
 import React, { Component } from 'react';
 import './App.css';
@@ -24,59 +29,189 @@ import './App.css';
 class App extends Component {
 	render() {
 		return (
+			<div id='App'>
+				<div id="container-main">
+					<img className="remove-highlight" src="./calculator.png" />
+					<div id="calculator-mask" className="remove-highlight">
 
+						<div className="output">
+							<span className="total"></span>
+						</div>
+
+						<div className="btn clear"></div>
+
+						<div className="btn zero"></div>
+						<div className="btn one"></div>
+						<div className="btn two"></div>
+						<div className="btn three"></div>
+						<div className="btn four"></div>
+						<div className="btn five"></div>
+						<div className="btn six"></div>
+						<div className="btn seven"></div>
+						<div className="btn eight"></div>
+						<div className="btn nine"></div>
+
+						<div className="btn equal"></div>
+						<div className="btn multiply"></div>
+						<div className="btn divide"></div>
+						<div className="btn subtract"></div>
+						<div className="btn add"></div>
+					</div>
+				</div>
+			</div>
 		);
 	}
 }
 
 export default App;
 ````
-#### Code
-Paste the following into the empty return and move calculator.png into the public folder ( app -> public ):
-````jsx
-<div id='App'>
-	<div id="container-main">
-		<img className="remove-highlight" src="./calculator.png" />
-		<div id="calculator-mask" className="remove-highlight">
+</details>
 
-			<div className="output">
-				<span className="total"></span>
-			</div>
+In addition to App.js we are going to over-write index.css ( app -> src -> index.css ) with the following code:
+<details>
+<summary> index.css </summary>
+````css
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
 
-			<div className="btn clear"></div>
+.remove-highlight {
+	user-select: none;
+}
 
-			<div className="btn zero"></div>
-			<div className="btn one"></div>
-			<div className="btn two"></div>
-			<div className="btn three"></div>
-			<div className="btn four"></div>
-			<div className="btn five"></div>
-			<div className="btn six"></div>
-			<div className="btn seven"></div>
-			<div className="btn eight"></div>
-			<div className="btn nine"></div>
+#container-main {
+	height: 267px;
+}
 
-			<div className="btn equal"></div>
-			<div className="btn multiply"></div>
-			<div className="btn divide"></div>
-			<div className="btn subtract"></div>
-			<div className="btn add"></div>
-		</div>
-	</div>
-</div>
+#calculator-mask {
+	width: 325px;
+	height: 267px;
+	position: relative;
+	top: -272px;
+}
+
+.btn {
+	width: 66px;
+	height: 40px;
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.output {
+	position: absolute;
+	width: 212px;
+	height: 40px;
+	top: 21px;
+	left: 93px;
+}
+
+.total {
+	position: absolute;
+	right: 7px;
+	bottom: 3px;
+	font-size: 27px;
+	color: burlywood;
+}
+
+.clear {
+	left: 20px;
+	bottom: 206px;
+}
+
+.zero {
+	bottom: 18px;
+	left: 20px;
+}
+
+.one {
+	bottom: 65px;
+	left: 20px;
+}
+
+.two {
+	bottom: 65px;
+	left: 93px;
+}
+
+.three {
+	bottom: 65px;
+	left: 166px;
+}
+
+.four {
+	bottom: 112px;
+	left: 20px;
+}
+
+.five {
+	bottom: 112px;
+	left: 93px;
+}
+
+.six {
+	bottom: 112px;
+	left: 166px;
+}
+
+.seven {
+	bottom: 159px;
+	left: 20px;
+}
+
+.eight {
+	bottom: 159px;
+	left: 93px;
+}
+
+.nine {
+	bottom: 159px;
+	left: 166px;
+}
+
+.equal {
+	bottom: 18px;
+	left: 166px;
+}
+
+.multiply {
+	bottom: 18px;
+	left: 239px;
+}
+
+.divide {
+	bottom: 65px;
+	left: 239px;
+}
+
+.subtract {
+	bottom: 112px;
+	left: 239px;
+}
+
+.add {
+	bottom: 159px;
+	left: 239px;
+}
 ````
+</details>
 
-Paste over index.css with the following styles ( app -> src -> index.css )
-
-[Click Me](http://pastebin.com/iBgbL3NQ)
-
-#### Preview
+#### Solution
 If everything worked correctly your browser should look like this:
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/three.png)
 
-## Step 2 - Assigning Variables to State
+## Step 2
 #### Summary
-What is state? State is an object that can determine how components function. On this state object you can put however many properties you need and the entire component has access to them. For example if you had:
+In this step we are going to assign variables to state which we will need to keep track of information during run time. State is an object that can determine how components function. On the state object you can put however many properties you need and the entire component has access to them. You are also not limited to what you can assign the properties. You can use variables, integers, strings, objects, functions, etc... 
+
+For example if you had:
 ````jsx
 this.state = {
 	header: 'My Awesome Header'
@@ -84,15 +219,17 @@ this.state = {
 
 <span id="header"> {this.state.header} </span>
 ````
-Now our header span tag is using the header property on state, when the element is rendered on the DOM it will have the text of 'My Awesome Header'. And whenever we change `this.state.header` it will automatically update our span's text.
+On render the span with the id of header is going to use whatever was assigned to `this.state.header`. In this instance, header will render with the text of "My Awesome Header". This also makes our header element dynamic. When ever `this.state.header` updates the span tag will update with it. 
 
-In this step we are going to create a constructor function which is required in order to use state. We will also define some key variables our calculator will need in order to function.
+For example: If we had a button click function that changed `this.state.header` to "Other Header", the span tag on the DOM will then render in with the new value of "Other Header."
 
-#### Detail
-Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()`. After calling `super()` we can use `this.state = {}` to start setting things on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
+#### Detailed Instructions
+Just above the render function in App.js let's add a function called constructor. Before we can do anything with state we are required to call `super()` inside of the constructor function. After calling `super()` we can use `this.state = {}` to start setting properties on state. For this calculator to work we are going to need a couple variables and also some functions. For now let's focus on the variables.
 
 Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `resetDisplay: false`. Notice how display is a string and temp is an integer.
-#### Code
+#### Solution
+<details>
+<summary> Constructor Fn </summary>
 ````jsx
 constructor(props) {
 	super();
@@ -104,13 +241,15 @@ constructor(props) {
 	}
 }
 ````
-## Step 3 - Displaying Numbers
+</details>
+
+## Step 3
 #### Summary
-In this step we are going to see how elements in our `render()` have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
-#### Detail
+In this step we are going to see how elements in our `render()` function have access to properties on state. We will create a function called `setDisplay()` that will allow us to click on the number buttons and see the number appear in the output of the calculator.
+#### Detailed Instructions
 To start, let's take a look at our div with the className of output. Inside that div we have a span with the className of total. This element sits in the output section of our calculator.
 
-Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`.
+Inside the span tags we can use `{ }` to 'break' out of JSX and use JavaScript. To access state we always use `{ this.state }`. In this case we want to use our display property so we will use `{ this.state.display }`. 
 
 With this current setup, any time we change `this.state.display` it will displayed in our span element.
 
@@ -142,7 +281,9 @@ There is a little bit of a trick to this however. We cannot simply just add `onC
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
 ````
-Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
+Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render. 
+
+We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ````jsx
 <div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
 ````
@@ -166,11 +307,85 @@ setDisplay: (num) => {
 	this.setState({ display: this.state.display + num });
 }
 ````
-#### Code
-[App.js](http://pastebin.com/b1bSJGTB)
+#### Solution
+<details>
+<summary> App.js </summary>
+````jsx
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+	constructor(props) {
+		super();
+		this.state = {
+			display: '0',
+			operator: '',
+			temp: 0,
+			resetDisplay: false,
+			setDisplay: (num) => {
+				this.setState({ display: this.state.display + num });
+ 			}
+		}
+	}
+
+	render() {
+		return (
+			<div id='App'>
+				<div id="container-main">
+					<img className="remove-highlight" src="./calculator.png" alt="calculator" />
+					<div id="calculator-mask" className="remove-highlight">
+
+						<div className="output">
+							<span className="total"> { this.state.display } </span>
+						</div>
+
+						<div className="btn clear"}></div>
+
+						<div className="btn zero" 	onClick={ () => { this.state.setDisplay('0'); } }></div>
+						<div className="btn one" 	onClick={ () => { this.state.setDisplay('1'); } }></div>
+						<div className="btn two"	onClick={ () => { this.state.setDisplay('2'); } }></div>
+						<div className="btn three"	onClick={ () => { this.state.setDisplay('3'); } }></div>
+						<div className="btn four"	onClick={ () => { this.state.setDisplay('4'); } }></div>
+						<div className="btn five"	onClick={ () => { this.state.setDisplay('5'); } }></div>
+						<div className="btn six"	onClick={ () => { this.state.setDisplay('6'); } }></div>
+						<div className="btn seven"	onClick={ () => { this.state.setDisplay('7'); } }></div>
+						<div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
+						<div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
+
+						<div className="btn equal"></div>
+						<div className="btn multiply"></div>
+						<div className="btn divide"></div>
+						<div className="btn subtract"></div>
+						<div className="btn add"></div>
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default App;
+````
+</details>
 
 ## Step 4 - Error Handling
 #### Summary
 In this step we will be tweaking our calculator to handle certain scenarios. If we click on our buttons we can see that our display now updates. However our calculator keeps the initial 0 and also doesn't account for length and can break out of its container.
 
 ![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2.png)
+
+#### Detailed Instructions
+##### Exclude initial 0
+In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
+###### Solution
+<details>
+<summary> setDisplay Fn </summary>
+````jsx
+setDisplay: (num) => {
+	var display = ( this.state.display === '0' ) ? num : this.state.display + num;
+		this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
+	}
+}
+````
+</details>
+##### Keep length contained in output field
