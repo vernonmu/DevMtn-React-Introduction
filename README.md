@@ -412,7 +412,7 @@ In this step will be adding a setOperator function to our state object that will
 ### Detailed Instructions
 There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things. 
 
-1. Save which operator the user choses 
+1. Save which operator the user chooses 
 2. Only allow for the operator to be selected once
 3. Save the first number the user inputted
 4. Clear the display for the second number 
@@ -441,7 +441,7 @@ setOperator: (operator) => {
 }
 ````
 
-If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a truthy value since we initialized it as `''` which is a falsy value.
+If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a falsy value since we initialized it as `''` which is a falsy value.
 ````jsx
 setOperator: (operator) => {
 	if (!this.state.operator) {
