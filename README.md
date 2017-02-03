@@ -484,4 +484,51 @@ Using the `onClick={}` attribute call the calculate function. Since all the valu
 ````jsx
 <div className="btn equal" onClick={ () => { this.state.calculate(); } }></div>
 ````
+Now let's create our calculate function as a property on state
+````jsx
+calculate: () => {
 
+}
+````
+There are some scenarios to consider when creating this function. For example, how do we know when we press the equal button that the user has already selected an operator? Well, if we look at our code base when we select an operator we update the operator and temp properties. We can use these as a source of truth for determining if we should preform a math operation. 
+
+Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
+````jsx
+calculate: () => {
+	if ( this.state.temp === 0 ) { return; }
+}
+````
+This is a good way to prevent our program from breaking and preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected. 
+
+The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
+````jsx
+calculate: () => {
+	if ( this.state.temp === 0 ) { return; } 
+
+	switch ( this.state.operator ) {
+
+	}
+}
+````
+
+	var result;
+	if ( this.state.resetDisplay || this.state.temp === 0 ) { return; }
+
+	switch( this.state.operator ) {
+		case '+':
+			result = parseInt(this.state.display, 10) + this.state.temp;
+			break;
+		case '-':
+			result = parseInt(this.state.display, 10) - this.state.temp;
+			break;
+		case '*':
+			result = parseInt(this.state.display, 10) * this.state.temp;
+			break;
+		case '/':
+			result = parseInt(this.state.display, 10) / this.state.temp;
+			break;
+		default:
+			break;
+	}
+
+	this.setState({ display: result, resetDisplay: true });
