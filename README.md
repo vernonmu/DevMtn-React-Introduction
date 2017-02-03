@@ -405,3 +405,9 @@ setDisplay: (num) => {
 
 ### Solution
 ![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
+
+## Step 5
+### Summary
+In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter. 
+### Detailed Instructions
+There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do three things. 1. Save which operator the user chose, 2. Save the first number the user inputted, and 3. Clear the display for the second number. We can do all of these things using one `this.setState({})`.
