@@ -7,7 +7,7 @@ For this setup we will be using create-react-app to quickly create our base for 
 
 In your terminal type in `create-react-app app` when in the root directory of the project. This process may take up to 5 minutes depending on your internet speed.
 
----
+
 ## Step 1
 ### Summary
 After create-react-app has finished, you'll notice we now have a folder named app in the root of our project. That's because we used the command `create-react-app app` if we wanted our folder to be named something different we could use `create-react-app myAwesomeProject`.
@@ -24,8 +24,7 @@ In this step we are going to change the default react landing page to our calcul
 If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
 <details>
 <summary> App.js </summary>
-````jsx
-import React, { Component } from 'react';
+```import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
@@ -65,8 +64,7 @@ class App extends Component {
 	}
 }
 
-export default App;
-````
+export default App;```
 </details>
 
 In addition to App.js we are going to over-write index.css ( app -> src -> index.css ) with the following code:
