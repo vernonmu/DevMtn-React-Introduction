@@ -255,17 +255,15 @@ With this current setup, any time we change `this.state.display` it will display
 </div>
 ````
 
-Now we can create our function that will update our state property `display`. Since we want elements inside of our render function to have access to the setDisplay function we will create it as a property on state.
+Now we can create our function that will update our state property `display`. If we look at line 4 of our App.js file we can see that all our code is being put inside of a class that extends on the React.Component. Because of this, we can add our functions as separate methods on the class. Let's add our new function underneath the render method on our class. In the code snippet I cleared out the render method to save space, you should not clear what's in your render method.
 ```jsx
-this.state = {
-  display: '0',
-  operator: '',
-  temp: 0,
-  resetDisplay: false,
-  setDisplay: (num) => {
+  render() {
 
   }
-}
+
+  setDisplay(num) {
+
+  }
 ```
 
 
