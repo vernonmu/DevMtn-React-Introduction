@@ -67,7 +67,7 @@ class App extends Component {
 export default App;``
 
 
-In addition to App.js we are going to over-write index.css ( app -> src -> index.css ) with the following code:
+In addition to App.js, we are going to over-write index.css ( app -> src -> index.css ) with the following code:
 <details>
 <summary> index.css </summary>
 ````css
