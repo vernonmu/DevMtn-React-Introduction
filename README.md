@@ -272,34 +272,34 @@ In react in order to trigger a function on a click event we use the attribute ca
 <div className="btn one"></div>
 ```
 
-There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
+There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.setDisplay(); }` because on render react will actually try to execute the function. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
 ```jsx
-<div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
+<div className="btn one" onClick={ () => { this.setDisplay(); } }></div>
 ```
 Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render.
 
 We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ```jsx
-<div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
+<div className="btn one" onClick={ () => { this.setDisplay('1'); } }></div>
 ```
 
-Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
+Let's copy and paste `onClick={ () => { this.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
 ```jsx
-<div className="btn zero"   onClick={ () => { this.state.setDisplay('0'); } }></div>
-<div className="btn one"    onClick={ () => { this.state.setDisplay('1'); } }></div>
-<div className="btn two"    onClick={ () => { this.state.setDisplay('2'); } }></div>
-<div className="btn three"  onClick={ () => { this.state.setDisplay('3'); } }></div>
-<div className="btn four"   onClick={ () => { this.state.setDisplay('4'); } }></div>
-<div className="btn five"   onClick={ () => { this.state.setDisplay('5'); } }></div>
-<div className="btn six"    onClick={ () => { this.state.setDisplay('6'); } }></div>
-<div className="btn seven"  onClick={ () => { this.state.setDisplay('7'); } }></div>
-<div className="btn eight"  onClick={ () => { this.state.setDisplay('8'); } }></div>
-<div className="btn nine"   onClick={ () => { this.state.setDisplay('9'); } }></div>
+<div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
+<div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
+<div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
+<div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
+<div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
+<div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
+<div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
+<div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
+<div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
+<div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
 ```
 Great, all our number button elements are ready to start changing `this.state.display`. Let's code our setDisplay function. In react to change state we always use `this.setState({})`. Since we are getting the number passed in as a parameter we can use `num` to update `this.state.display`. The reason why `this.state.display` and the parameter we are passing are strings is so that we can use concatenation to update our calculator's display.
 ```jsx
-setDisplay: (num) => {
-	this.setState({ display: this.state.display + num });
+setDisplay(num) {
+  this.setState({ display: this.state.display + num });
 }
 ```
 
@@ -316,9 +316,6 @@ class App extends Component {
       operator: '',
       temp: 0,
       resetDisplay: false,
-      setDisplay: (num) => {
-        this.setState({ display: this.state.display + num });
-      }
     }
   }
 
@@ -333,18 +330,18 @@ class App extends Component {
               <span className="total"> { this.state.display } </span>
             </div>
 
-            <div className="btn clear"}></div>
+            <div className="btn clear"></div>
 
-            <div className="btn zero" 	onClick={ () => { this.state.setDisplay('0'); } }></div>
-            <div className="btn one" 	onClick={ () => { this.state.setDisplay('1'); } }></div>
-            <div className="btn two"	onClick={ () => { this.state.setDisplay('2'); } }></div>
-            <div className="btn three"	onClick={ () => { this.state.setDisplay('3'); } }></div>
-            <div className="btn four"	onClick={ () => { this.state.setDisplay('4'); } }></div>
-            <div className="btn five"	onClick={ () => { this.state.setDisplay('5'); } }></div>
-            <div className="btn six"	onClick={ () => { this.state.setDisplay('6'); } }></div>
-            <div className="btn seven"	onClick={ () => { this.state.setDisplay('7'); } }></div>
-            <div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
-            <div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
+            <div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
+            <div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
+            <div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
+            <div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
+            <div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
+            <div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
+            <div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
+            <div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
+            <div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
+            <div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
 
             <div className="btn equal"></div>
             <div className="btn multiply"></div>
@@ -355,6 +352,10 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  setDisplay(num) {
+    this.setState({ display: this.state.display + num });
   }
 }
 
