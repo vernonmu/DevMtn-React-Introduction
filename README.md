@@ -374,7 +374,7 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
 ##### Solution
 ```jsx
-setDisplay: (num) => {
+setDisplay(num) {
   var display = ( this.state.display === '0' ) ? num : this.state.display + num;
   this.setState({ display: display });
 }
@@ -385,7 +385,7 @@ setDisplay: (num) => {
 With the current size of the output field you can fit about 13 characters before breaking outside the border. Therefore, we can check to see if the length of display is less than 13 characters before updating state.
 ##### Solution
 ```jsx
-setDisplay: (num) => {
+setDisplay(num) {
   var display = ( this.state.display === '0' ) ? num : this.state.display + num;
   this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
 }
@@ -398,7 +398,7 @@ setDisplay: (num) => {
 
 ## Step 5
 ### Summary
-In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter.
+In this step will be adding a setOperator function that will handle setting our math operator using an `operator` parameter.
 ### Detailed Instructions
 There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things.
 
@@ -409,7 +409,7 @@ There are a couple things to consider on this step. When a user types in their f
 
 We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
 
-If we take a look in our App.js we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `multiply`. Using an `onClick={}` we can call a function on state called `setOperator` that takes an operator.
+If we take a look in our App.js we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `multiply`. Using an `onClick={}` we can call a function called `setOperator` that takes an operator.
 
 * '+' - Used for addition
 * '-' - Used for subtraction
@@ -418,22 +418,22 @@ If we take a look in our App.js we'll see we have four elements with classes of 
 
 Using the following symbols and the `onClick={}` attribute we should end up with the following code:
 ```jsx
-<div className="btn multiply" onClick={ () => { this.state.setOperator('*'); } }></div>
-<div className="btn divide"   onClick={ () => { this.state.setOperator('/'); } }></div>
-<div className="btn subtract" onClick={ () => { this.state.setOperator('-'); } }></div>
-<div className="btn add"      onClick={ () => { this.state.setOperator('+'); } }></div>
+<div className="btn multiply" onClick={ () => { this.setOperator('*'); } }></div>
+<div className="btn divide"   onClick={ () => { this.setOperator('/'); } }></div>
+<div className="btn subtract" onClick={ () => { this.setOperator('-'); } }></div>
+<div className="btn add"      onClick={ () => { this.setOperator('+'); } }></div>
 ```
 
-We can now code our setOperator function on state that will take the `operator` parameter.
+We can now code our setOperator function that will take the `operator` parameter.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
 
 }
 ```
 
 If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a falsy value since we initialized it as `''` which is a falsy value.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
   if (!this.state.operator) {
 
   }
@@ -442,7 +442,7 @@ setOperator: (operator) => {
 
 Now code will only run on this method if the operator hasn't been set. Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
   if (!this.state.operator) {
     this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
   }
@@ -466,11 +466,11 @@ To start let's take a look at our App.js and find the element that corresponds t
 ```
 Using the `onClick={}` attribute call the calculate function. Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
 ```jsx
-<div className="btn equal" onClick={ () => { this.state.calculate(); } }></div>
+<div className="btn equal" onClick={ () => { this.calculate(); } }></div>
 ```
-Now let's create our calculate function as a property on state
+Now let's create our calculate function
 ```jsx
-calculate: () => {
+calculate() {
 
 }
 ```
