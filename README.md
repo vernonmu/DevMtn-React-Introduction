@@ -24,7 +24,7 @@ In this step we are going to change the default react landing page to our calcul
 If we look in our App.js we will see create-react-app created our first component for us. Normally we would start editing this file but we are going to over-write it to save time ( app -> public -> src -> App.js ). Erase everything and use the following code for App.js:
 <details>
 <summary> App.js </summary>
-````jsx
+```jsx
 import React, { Component } from 'react';
 import './App.css';
 
@@ -65,8 +65,9 @@ class App extends Component {
 	}
 }
 
-export default App;````
+export default App;```
 </details>
+
 
 In addition to App.js we are going to over-write index.css ( app -> src -> index.css ) with the following code:
 <details>
@@ -200,8 +201,7 @@ body {
 .add {
 	bottom: 159px;
 	left: 239px;
-}
-````
+}````
 </details>
 
 #### Solution
