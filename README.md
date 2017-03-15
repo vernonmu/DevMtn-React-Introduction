@@ -229,13 +229,13 @@ Let's define in our state: `display: '0'`, `operator: ''`, `temp: 0`, and `reset
 #### Solution
 ```jsx
 constructor(props) {
-	super();
-	this.state = {
-		display: '0',
-		operator: '',
-		temp: 0,
-		resetDisplay: false
-	}
+  super();
+  this.state = {
+    display: '0',
+    operator: '',
+    temp: 0,
+    resetDisplay: false
+  }
 }
 ```
 
