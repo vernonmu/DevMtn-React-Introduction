@@ -551,7 +551,7 @@ Last but not least, in this step we will be making the clear button work.
 ### Detailed Instructions
 In our App.js find the element with the `clear` class and let's add an `onClick={}` attribute to call a clearDisplay function.
 ```jsx
-<div className="btn clear" 	onClick={ () => { this.state.clearDisplay(); }}></div>
+<div className="btn clear" onClick={ () => { this.state.clearDisplay(); }}></div>
 ```
 In our state let's add our last property `clearDisplay`
 ```jsx
