@@ -28,40 +28,40 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-	render() {
-		return (
-			<div id='App'>
-				<div id="container-main">
-					<img className="remove-highlight" src="./calculator.png" />
-					<div id="calculator-mask" className="remove-highlight">
+  render() {
+    return (
+      <div id='App'>
+        <div id="container-main">
+          <img className="remove-highlight" src="./calculator.png" />
+          <div id="calculator-mask" className="remove-highlight">
 
-						<div className="output">
-							<span className="total"></span>
-						</div>
+            <div className="output">
+              <span className="total"></span>
+            </div>
 
-						<div className="btn clear"></div>
+            <div className="btn clear"></div>
 
-						<div className="btn zero"></div>
-						<div className="btn one"></div>
-						<div className="btn two"></div>
-						<div className="btn three"></div>
-						<div className="btn four"></div>
-						<div className="btn five"></div>
-						<div className="btn six"></div>
-						<div className="btn seven"></div>
-						<div className="btn eight"></div>
-						<div className="btn nine"></div>
+            <div className="btn zero"></div>
+            <div className="btn one"></div>
+            <div className="btn two"></div>
+            <div className="btn three"></div>
+            <div className="btn four"></div>
+            <div className="btn five"></div>
+            <div className="btn six"></div>
+            <div className="btn seven"></div>
+            <div className="btn eight"></div>
+            <div className="btn nine"></div>
 
-						<div className="btn equal"></div>
-						<div className="btn multiply"></div>
-						<div className="btn divide"></div>
-						<div className="btn subtract"></div>
-						<div className="btn add"></div>
-					</div>
-				</div>
-			</div>
-		);
-	}
+            <div className="btn equal"></div>
+            <div className="btn multiply"></div>
+            <div className="btn divide"></div>
+            <div className="btn subtract"></div>
+            <div className="btn add"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
