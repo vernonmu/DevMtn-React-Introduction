@@ -453,7 +453,7 @@ setOperator: (operator) => {
 Why parseInt? Since we are going to do math on these numbers I used parseInt on the current display so I wouldn't have to use it later. The reason why there is `, 10` is to avoid linting warnings that create-react-app has.
 
 ### Solution
-![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1-4g.gif)
+![giphy](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1-4g.gif)
 
 
 ## Step 6
@@ -480,7 +480,7 @@ There are some scenarios to consider when creating this function. For example, h
 Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
 ```jsx
 calculate: () => {
-	if ( this.state.temp === 0 ) { return; }
+  if ( this.state.temp === 0 ) { return; }
 }
 ```
 This is a good way to prevent our program from breaking or preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected.
@@ -541,7 +541,7 @@ calculate: () => {
 
 
 ### Solution
-![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2g.gif)
+![giphy](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2g.gif)
 
 
 ## Step 7
@@ -550,28 +550,28 @@ Last but not least, in this step we will be making the clear button work.
 
 ### Detailed Instructions
 In our App.js find the element with the `clear` class and let's add an `onClick={}` attribute to call a clearDisplay function.
-````jsx
+```jsx
 <div className="btn clear" 	onClick={ () => { this.state.clearDisplay(); }}></div>
-````
+```
 In our state let's add our last property `clearDisplay`
-````jsx
+```jsx
 clearDisplay: () => {
 
 }
-````
+```
 When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value.
-````jsx
+```jsx
 clearDisplay: () => {
-	this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
+  this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
 }
-````
+```
 
 ### Solution
-![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/3g.gif)
+![giphy](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/3g.gif)
 
----
+
 ## Black Diamond
 ### Instructions
 Figure out how to use the resetDisplay state property so that the user can start doing other math operations when clicking on a number after pressing equals.
 ### Solution
-![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/4g.gif)
+![giphy](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/4g.gif)
