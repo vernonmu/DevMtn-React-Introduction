@@ -394,7 +394,7 @@ setDisplay: (num) => {
 
 
 ### Solution
-![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
+![png](https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
 
 
 ## Step 5
