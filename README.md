@@ -251,7 +251,7 @@ With this current setup, any time we change `this.state.display` it will display
 
 ````jsx
 <div className="output">
-	<span className="total"> { this.state.display } </span>
+  <span className="total"> { this.state.display } </span>
 </div>
 ````
 
@@ -374,35 +374,29 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 #### Exclude initial 0
 In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
 ##### Solution
-<details>
-<summary> setDisplay Fn </summary>
-````jsx
+```jsx
 setDisplay: (num) => {
-		var display = ( this.state.display === '0' ) ? num : this.state.display + num;
-		this.setState({ display: display });
-	}
+  var display = ( this.state.display === '0' ) ? num : this.state.display + num;
+  this.setState({ display: display });
 }
-````
-</details>
+```
+
 
 #### Keep length contained in output field
 With the current size of the output field you can fit about 13 characters before breaking outside the border. Therefore, we can check to see if the length of display is less than 13 characters before updating state.
 ##### Solution
-<details>
-<summary> setDisplay Fn </summary>
-````jsx
+```jsx
 setDisplay: (num) => {
-		var display = ( this.state.display === '0' ) ? num : this.state.display + num;
-		this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
-	}
+  var display = ( this.state.display === '0' ) ? num : this.state.display + num;
+  this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
 }
-````
-</details>
+```
+
 
 ### Solution
 ![png] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/four.png)
 
----
+
 ## Step 5
 ### Summary
 In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter.
@@ -424,136 +418,132 @@ If we take a look in our App.js we'll see we have four elements with classes of 
 * '/' - Used for division
 
 Using the following symbols and the `onClick={}` attribute we should end up with the following code:
-````jsx
-<div className="btn multiply"	onClick={ () => { this.state.setOperator('*'); } }></div>
-<div className="btn divide"		onClick={ () => { this.state.setOperator('/'); } }></div>
-<div className="btn subtract" 	onClick={ () => { this.state.setOperator('-'); } }></div>
-<div className="btn add"		onClick={ () => { this.state.setOperator('+'); } }></div>
-````
+```jsx
+<div className="btn multiply" onClick={ () => { this.state.setOperator('*'); } }></div>
+<div className="btn divide"   onClick={ () => { this.state.setOperator('/'); } }></div>
+<div className="btn subtract" onClick={ () => { this.state.setOperator('-'); } }></div>
+<div className="btn add"      onClick={ () => { this.state.setOperator('+'); } }></div>
+```
 
 We can now code our setOperator function on state that will take the `operator` parameter.
-````jsx
+```jsx
 setOperator: (operator) => {
 
 }
-````
+```
 
 If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a falsy value since we initialized it as `''` which is a falsy value.
-````jsx
+```jsx
 setOperator: (operator) => {
-	if (!this.state.operator) {
+  if (!this.state.operator) {
 
-	}
+  }
 }
-````
+```
 
 Now code will only run on this method if the operator hasn't been set. Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
-````jsx
+```jsx
 setOperator: (operator) => {
-	if (!this.state.operator) {
-		this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
-	}
+  if (!this.state.operator) {
+    this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
+  }
 }
-````
+```
 
 Why parseInt? Since we are going to do math on these numbers I used parseInt on the current display so I wouldn't have to use it later. The reason why there is `, 10` is to avoid linting warnings that create-react-app has.
 
 ### Solution
 ![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/1-4g.gif)
 
----
+
 ## Step 6
 ### Summary
 In this step we will be adding a calculate function that will preform the user selected operation.
 
 ### Detailed Instructions
 To start let's take a look at our App.js and find the element that corresponds to the equal button.
-````jsx
+```jsx
 <div className="btn equal"></div>
-````
+```
 Using the `onClick={}` attribute call the calculate function. Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
-````jsx
+```jsx
 <div className="btn equal" onClick={ () => { this.state.calculate(); } }></div>
-````
+```
 Now let's create our calculate function as a property on state
-````jsx
+```jsx
 calculate: () => {
 
 }
-````
+```
 There are some scenarios to consider when creating this function. For example, how do we know when we press the equal button that the user has already selected an operator? Well, if we look at our code base when we select an operator we update the operator and temp properties. We can use these as a source of truth for determining if we should preform a math operation.
 
 Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
-````jsx
+```jsx
 calculate: () => {
 	if ( this.state.temp === 0 ) { return; }
 }
-````
+```
 This is a good way to prevent our program from breaking or preforming in a way we did not expect. With this if statement it will only run the code underneath it if an operator has been selected.
 
 The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
-<details>
-<summary> Calculate Fn </summary>
-````
+```jsx
 calculate: () => {
-	if ( this.state.temp === 0 ) { return; }
+  if ( this.state.temp === 0 ) { return; }
 
-	switch ( this.state.operator ) {
-		case '+':
+  switch ( this.state.operator ) {
+    case '+':
 
-			break;
-		case '-':
+      break;
+    case '-':
 
-			break;
-		case '*':
+      break;
+    case '*':
 
-			break;
-		case '/':
+      break;
+    case '/':
 
-			break;
-		default:
-			break;
-	}
+      break;
+    default:
+      break;
+  }
 }
-````
-</details>
+```
+
 
 To avoid having 4 different `this.setState({})` let's create a variable called result and update its value and use one `this.setState({})` after the switch statement has completed. Our variable result should be equal to the `this.state.temp` value ( +, -, *, / ) the current `this.state.display` value.
 
 Make sure to parseInt `this.state.display`
-<details>
-<summary> Calculate Fn </summary>
-````jsx
+```jsx
 calculate: () => {
-	if ( this.state.temp === 0 ) { return; }
-	var result;
+  if ( this.state.temp === 0 ) { return; }
+  var result;
 
-	switch ( this.state.operator ) {
-		case '+':
-			result = this.state.temp + parseInt(this.state.display, 10);
-			break;
-		case '-':
-			result = this.state.temp - parseInt(this.state.display, 10);
-			break;
-		case '*':
-			result = this.state.temp * parseInt(this.state.display, 10);
-			break;
-		case '/':
-			result = this.state.temp / parseInt(this.state.display, 10);
-			break;
-		default:
-			break;
-	}
+  switch ( this.state.operator ) {
+    case '+':
+      result = this.state.temp + parseInt(this.state.display, 10);
+      break;
+    case '-':
+      result = this.state.temp - parseInt(this.state.display, 10);
+      break;
+    case '*':
+      result = this.state.temp * parseInt(this.state.display, 10);
+      break;
+    case '/':
+      result = this.state.temp / parseInt(this.state.display, 10);
+      break;
+    default:
+      break;
+  }
 
-	this.setState({ display: result });
+  this.setState({ display: result });
 }
-````
-</details>
+```
+
 
 ### Solution
 ![giphy] (https://github.com/devlemire/DevMtn-React-Introduction/blob/master/readme/2g.gif)
 
----
+
 ## Step 7
 ### Summary
 Last but not least, in this step we will be making the clear button work. 
