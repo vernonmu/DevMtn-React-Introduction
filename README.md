@@ -71,133 +71,133 @@ export default App;
 In addition to App.js, we are going to over-write index.css ( app -> src -> index.css ) with the following code:
 ```css
 body {
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .remove-highlight {
-	user-select: none;
+  user-select: none;
 }
 
 #container-main {
-	height: 267px;
+  height: 267px;
 }
 
 #calculator-mask {
-	width: 325px;
-	height: 267px;
-	position: relative;
-	top: -272px;
+  width: 325px;
+  height: 267px;
+  position: relative;
+  top: -272px;
 }
 
 .btn {
-	width: 66px;
-	height: 40px;
-	display: inline-block;
-	position: absolute;
-	cursor: pointer;
+  width: 66px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
 }
 
 .output {
-	position: absolute;
-	width: 212px;
-	height: 40px;
-	top: 21px;
-	left: 93px;
+  position: absolute;
+  width: 212px;
+  height: 40px;
+  top: 21px;
+  left: 93px;
 }
 
 .total {
-	position: absolute;
-	right: 7px;
-	bottom: 3px;
-	font-size: 27px;
-	color: burlywood;
+  position: absolute;
+  right: 7px;
+  bottom: 3px;
+  font-size: 27px;
+  color: burlywood;
 }
 
 .clear {
-	left: 20px;
-	bottom: 206px;
+  left: 20px;
+  bottom: 206px;
 }
 
 .zero {
-	bottom: 18px;
-	left: 20px;
+  bottom: 18px;
+  left: 20px;
 }
 
 .one {
-	bottom: 65px;
-	left: 20px;
+  bottom: 65px;
+  left: 20px;
 }
 
 .two {
-	bottom: 65px;
-	left: 93px;
+  bottom: 65px;
+  left: 93px;
 }
 
 .three {
-	bottom: 65px;
-	left: 166px;
+  bottom: 65px;
+  left: 166px;
 }
 
 .four {
-	bottom: 112px;
-	left: 20px;
+  bottom: 112px;
+  left: 20px;
 }
 
 .five {
-	bottom: 112px;
-	left: 93px;
+  bottom: 112px;
+  left: 93px;
 }
 
 .six {
-	bottom: 112px;
-	left: 166px;
+  bottom: 112px;
+  left: 166px;
 }
 
 .seven {
-	bottom: 159px;
-	left: 20px;
+  bottom: 159px;
+  left: 20px;
 }
 
 .eight {
-	bottom: 159px;
-	left: 93px;
+  bottom: 159px;
+  left: 93px;
 }
 
 .nine {
-	bottom: 159px;
-	left: 166px;
+  bottom: 159px;
+  left: 166px;
 }
 
 .equal {
-	bottom: 18px;
-	left: 166px;
+  bottom: 18px;
+  left: 166px;
 }
 
 .multiply {
-	bottom: 18px;
-	left: 239px;
+  bottom: 18px;
+  left: 239px;
 }
 
 .divide {
-	bottom: 65px;
-	left: 239px;
+  bottom: 65px;
+  left: 239px;
 }
 
 .subtract {
-	bottom: 112px;
-	left: 239px;
+  bottom: 112px;
+  left: 239px;
 }
 
 .add {
-	bottom: 159px;
-	left: 239px;
+  bottom: 159px;
+  left: 239px;
 }
 ```
 
