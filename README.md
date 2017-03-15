@@ -255,17 +255,15 @@ With this current setup, any time we change `this.state.display` it will display
 </div>
 ````
 
-Now we can create our function that will update our state property `display`. Since we want elements inside of our render function to have access to the setDisplay function we will create it as a property on state.
+Now we can create our function that will update our state property `display`. If we look at line 4 of our App.js file we can see that all our code is being put inside of a class that extends on the React.Component. Because of this, we can add our functions as separate methods on the class. Let's add our new function underneath the render method on our class. In the code snippet I cleared out the render method to save space, you should not clear what's in your render method.
 ```jsx
-this.state = {
-  display: '0',
-  operator: '',
-  temp: 0,
-  resetDisplay: false,
-  setDisplay: (num) => {
+  render() {
 
   }
-}
+
+  setDisplay(num) {
+
+  }
 ```
 
 
@@ -274,34 +272,34 @@ In react in order to trigger a function on a click event we use the attribute ca
 <div className="btn one"></div>
 ```
 
-There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.state.setDisplay(); }` because on render react will actually try to execute the function. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
+There is a little bit of a trick to this however. We cannot simply just add `onClick={ this.setDisplay(); }` because on render react will actually try to execute the function. If we want to get around this we can wrap this call inside of an arrow function. It would look like:
 ```jsx
-<div className="btn one" onClick={ () => { this.state.setDisplay(); } }></div>
+<div className="btn one" onClick={ () => { this.setDisplay(); } }></div>
 ```
 Now when react reads over this it is a function that is not being invoked and therefore will not be executed on render.
 
 We are still missing one piece. If we are going to be using this same function for all our number buttons, how will the function know which number was clicked? We can use a parameter of the number of the button:
 ```jsx
-<div className="btn one" onClick={ () => { this.state.setDisplay('1'); } }></div>
+<div className="btn one" onClick={ () => { this.setDisplay('1'); } }></div>
 ```
 
-Let's copy and paste `onClick={ () => { this.state.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
+Let's copy and paste `onClick={ () => { this.setDisplay('#'); } }` over to each number button and be sure to replace # with the number of the button. You can determine which div is which number based on its className.
 ```jsx
-<div className="btn zero"   onClick={ () => { this.state.setDisplay('0'); } }></div>
-<div className="btn one"    onClick={ () => { this.state.setDisplay('1'); } }></div>
-<div className="btn two"    onClick={ () => { this.state.setDisplay('2'); } }></div>
-<div className="btn three"  onClick={ () => { this.state.setDisplay('3'); } }></div>
-<div className="btn four"   onClick={ () => { this.state.setDisplay('4'); } }></div>
-<div className="btn five"   onClick={ () => { this.state.setDisplay('5'); } }></div>
-<div className="btn six"    onClick={ () => { this.state.setDisplay('6'); } }></div>
-<div className="btn seven"  onClick={ () => { this.state.setDisplay('7'); } }></div>
-<div className="btn eight"  onClick={ () => { this.state.setDisplay('8'); } }></div>
-<div className="btn nine"   onClick={ () => { this.state.setDisplay('9'); } }></div>
+<div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
+<div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
+<div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
+<div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
+<div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
+<div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
+<div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
+<div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
+<div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
+<div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
 ```
 Great, all our number button elements are ready to start changing `this.state.display`. Let's code our setDisplay function. In react to change state we always use `this.setState({})`. Since we are getting the number passed in as a parameter we can use `num` to update `this.state.display`. The reason why `this.state.display` and the parameter we are passing are strings is so that we can use concatenation to update our calculator's display.
 ```jsx
-setDisplay: (num) => {
-	this.setState({ display: this.state.display + num });
+setDisplay(num) {
+  this.setState({ display: this.state.display + num });
 }
 ```
 
@@ -318,9 +316,6 @@ class App extends Component {
       operator: '',
       temp: 0,
       resetDisplay: false,
-      setDisplay: (num) => {
-        this.setState({ display: this.state.display + num });
-      }
     }
   }
 
@@ -335,18 +330,18 @@ class App extends Component {
               <span className="total"> { this.state.display } </span>
             </div>
 
-            <div className="btn clear"}></div>
+            <div className="btn clear"></div>
 
-            <div className="btn zero" 	onClick={ () => { this.state.setDisplay('0'); } }></div>
-            <div className="btn one" 	onClick={ () => { this.state.setDisplay('1'); } }></div>
-            <div className="btn two"	onClick={ () => { this.state.setDisplay('2'); } }></div>
-            <div className="btn three"	onClick={ () => { this.state.setDisplay('3'); } }></div>
-            <div className="btn four"	onClick={ () => { this.state.setDisplay('4'); } }></div>
-            <div className="btn five"	onClick={ () => { this.state.setDisplay('5'); } }></div>
-            <div className="btn six"	onClick={ () => { this.state.setDisplay('6'); } }></div>
-            <div className="btn seven"	onClick={ () => { this.state.setDisplay('7'); } }></div>
-            <div className="btn eight"	onClick={ () => { this.state.setDisplay('8'); } }></div>
-            <div className="btn nine"	onClick={ () => { this.state.setDisplay('9'); } }></div>
+            <div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
+            <div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
+            <div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
+            <div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
+            <div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
+            <div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
+            <div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
+            <div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
+            <div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
+            <div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
 
             <div className="btn equal"></div>
             <div className="btn multiply"></div>
@@ -357,6 +352,10 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  setDisplay(num) {
+    this.setState({ display: this.state.display + num });
   }
 }
 
@@ -375,7 +374,7 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 In order to remove the first 0 we can check to see if the display is currently '0'. Otherwise if it is not '0' do string concatenation.
 ##### Solution
 ```jsx
-setDisplay: (num) => {
+setDisplay(num) {
   var display = ( this.state.display === '0' ) ? num : this.state.display + num;
   this.setState({ display: display });
 }
@@ -386,7 +385,7 @@ setDisplay: (num) => {
 With the current size of the output field you can fit about 13 characters before breaking outside the border. Therefore, we can check to see if the length of display is less than 13 characters before updating state.
 ##### Solution
 ```jsx
-setDisplay: (num) => {
+setDisplay(num) {
   var display = ( this.state.display === '0' ) ? num : this.state.display + num;
   this.setState({ display: (this.state.display.length < 13) ? display : this.state.display })
 }
@@ -399,7 +398,7 @@ setDisplay: (num) => {
 
 ## Step 5
 ### Summary
-In this step will be adding a setOperator function to our state object that will handle setting our math operator using an `operator` parameter.
+In this step will be adding a setOperator function that will handle setting our math operator using an `operator` parameter.
 ### Detailed Instructions
 There are a couple things to consider on this step. When a user types in their first number and then presses an operator we need to do four things.
 
@@ -410,7 +409,7 @@ There are a couple things to consider on this step. When a user types in their f
 
 We can do all of these things using one `this.setState({})` with the following properties: `display`, `operator`, and `temp`.
 
-If we take a look in our App.js we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `multiply`. Using an `onClick={}` we can call a function on state called `setOperator` that takes an operator.
+If we take a look in our App.js we'll see we have four elements with classes of `multiply`, `divide`, `subtract`, and `multiply`. Using an `onClick={}` we can call a function called `setOperator` that takes an operator.
 
 * '+' - Used for addition
 * '-' - Used for subtraction
@@ -419,22 +418,22 @@ If we take a look in our App.js we'll see we have four elements with classes of 
 
 Using the following symbols and the `onClick={}` attribute we should end up with the following code:
 ```jsx
-<div className="btn multiply" onClick={ () => { this.state.setOperator('*'); } }></div>
-<div className="btn divide"   onClick={ () => { this.state.setOperator('/'); } }></div>
-<div className="btn subtract" onClick={ () => { this.state.setOperator('-'); } }></div>
-<div className="btn add"      onClick={ () => { this.state.setOperator('+'); } }></div>
+<div className="btn multiply" onClick={ () => { this.setOperator('*'); } }></div>
+<div className="btn divide"   onClick={ () => { this.setOperator('/'); } }></div>
+<div className="btn subtract" onClick={ () => { this.setOperator('-'); } }></div>
+<div className="btn add"      onClick={ () => { this.setOperator('+'); } }></div>
 ```
 
-We can now code our setOperator function on state that will take the `operator` parameter.
+We can now code our setOperator function that will take the `operator` parameter.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
 
 }
 ```
 
 If one of our requirements is to set the operator only one time, we can use an if statement to check to see if it has already been set on state. The easiest way to do that is check to see if it is a falsy value since we initialized it as `''` which is a falsy value.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
   if (!this.state.operator) {
 
   }
@@ -443,7 +442,7 @@ setOperator: (operator) => {
 
 Now code will only run on this method if the operator hasn't been set. Since we are getting the operator as a parameter we can just use setState to set the operator, reset the display, and save the current number.
 ```jsx
-setOperator: (operator) => {
+setOperator(operator) {
   if (!this.state.operator) {
     this.setState({ operator: operator, temp: parseInt(this.state.display, 10), display: '0' })
   }
@@ -467,11 +466,11 @@ To start let's take a look at our App.js and find the element that corresponds t
 ```
 Using the `onClick={}` attribute call the calculate function. Since all the values we need are already being stored on state, we do not need to call this function with any parameters.
 ```jsx
-<div className="btn equal" onClick={ () => { this.state.calculate(); } }></div>
+<div className="btn equal" onClick={ () => { this.calculate(); } }></div>
 ```
-Now let's create our calculate function as a property on state
+Now let's create our calculate function
 ```jsx
-calculate: () => {
+calculate() {
 
 }
 ```
@@ -479,7 +478,7 @@ There are some scenarios to consider when creating this function. For example, h
 
 Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
 }
 ```
@@ -487,7 +486,7 @@ This is a good way to prevent our program from breaking or preforming in a way w
 
 The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
 
   switch ( this.state.operator ) {
@@ -514,7 +513,7 @@ To avoid having 4 different `this.setState({})` let's create a variable called r
 
 Make sure to parseInt `this.state.display`
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
   var result;
 
@@ -553,15 +552,15 @@ In our App.js find the element with the `clear` class and let's add an `onClick=
 ```jsx
 <div className="btn clear" onClick={ () => { this.state.clearDisplay(); }}></div>
 ```
-In our state let's add our last property `clearDisplay`
+As our last method, let's add a function called `clearDisplay`
 ```jsx
-clearDisplay: () => {
+clearDisplay() {
 
 }
 ```
 When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value.
 ```jsx
-clearDisplay: () => {
+clearDisplay() {
   this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
 }
 ```
