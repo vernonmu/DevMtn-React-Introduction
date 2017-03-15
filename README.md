@@ -69,9 +69,7 @@ export default App;
 
 
 In addition to App.js, we are going to over-write index.css ( app -> src -> index.css ) with the following code:
-<details>
-<summary> index.css </summary>
-````css
+```css
 body {
 	margin: 0;
 	padding: 0;
@@ -200,8 +198,8 @@ body {
 .add {
 	bottom: 159px;
 	left: 239px;
-}````
-</details>
+}
+```
 
 #### Solution
 If everything worked correctly your browser should look like this:
