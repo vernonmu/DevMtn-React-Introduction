@@ -478,7 +478,7 @@ There are some scenarios to consider when creating this function. For example, h
 
 Therefore, we can code an if statement that checks to see if temp is 0, and if it is, exit the function.
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
 }
 ```
@@ -486,7 +486,7 @@ This is a good way to prevent our program from breaking or preforming in a way w
 
 The next thing to consider is the different operators that are possible, we could use multiple if/else statements, but a much cleaner solution is a switch statement. Let's add a switch statement for `this.state.operator` ( '+', '-', '*', '/' )
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
 
   switch ( this.state.operator ) {
@@ -513,7 +513,7 @@ To avoid having 4 different `this.setState({})` let's create a variable called r
 
 Make sure to parseInt `this.state.display`
 ```jsx
-calculate: () => {
+calculate() {
   if ( this.state.temp === 0 ) { return; }
   var result;
 
@@ -552,15 +552,15 @@ In our App.js find the element with the `clear` class and let's add an `onClick=
 ```jsx
 <div className="btn clear" onClick={ () => { this.state.clearDisplay(); }}></div>
 ```
-In our state let's add our last property `clearDisplay`
+As our last method, let's add a function called `clearDisplay`
 ```jsx
-clearDisplay: () => {
+clearDisplay() {
 
 }
 ```
 When we clear the display we also want to reset the calculator no matter what state it is in. The best way to accomplish this is by setting all the state values to their initial value. Using `this.setState({})` set all the properties to their default value.
 ```jsx
-clearDisplay: () => {
+clearDisplay() {
   this.setState({ display: '0', temp: 0, operator: '', resetDisplay: false });
 }
 ```
